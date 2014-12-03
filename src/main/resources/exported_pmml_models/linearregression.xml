@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PMML xmlns="http://www.dmg.org/PMML-4_2">
+    <Header description="linear regression">
+        <Application name="Apache Spark MLlib"/>
+        <Timestamp>2014-12-03T07:52:27</Timestamp>
+    </Header>
+    <DataDictionary numberOfFields="7">
+        <DataField name="field_0" optype="continuous" dataType="double"/>
+        <DataField name="field_1" optype="continuous" dataType="double"/>
+        <DataField name="field_2" optype="continuous" dataType="double"/>
+        <DataField name="field_3" optype="continuous" dataType="double"/>
+        <DataField name="field_4" optype="continuous" dataType="double"/>
+        <DataField name="field_5" optype="continuous" dataType="double"/>
+        <DataField name="target" optype="continuous" dataType="double"/>
+    </DataDictionary>
+    <RegressionModel modelName="linear regression" functionName="regression">
+        <MiningSchema>
+            <MiningField name="field_0" usageType="active"/>
+            <MiningField name="field_1" usageType="active"/>
+            <MiningField name="field_2" usageType="active"/>
+            <MiningField name="field_3" usageType="active"/>
+            <MiningField name="field_4" usageType="active"/>
+            <MiningField name="field_5" usageType="active"/>
+            <MiningField name="target" usageType="target"/>
+        </MiningSchema>
+        <RegressionTable intercept="1.0035698885211664">
+            <NumericPredictor name="field_0" coefficient="-0.0012362959888529807"/>
+            <NumericPredictor name="field_1" coefficient="0.004156044796905159"/>
+            <NumericPredictor name="field_2" coefficient="-0.015945280338501493"/>
+            <NumericPredictor name="field_3" coefficient="-0.0044735475681687694"/>
+            <NumericPredictor name="field_4" coefficient="0.2775015362963145"/>
+            <NumericPredictor name="field_5" coefficient="0.10808995660595046"/>
+        </RegressionTable>
+    </RegressionModel>
+</PMML>
