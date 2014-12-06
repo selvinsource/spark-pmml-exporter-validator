@@ -10,7 +10,7 @@ Attribute Information:
 7. air temperature
 
 Note:
-The date attribute has been removed as not relevant for the linear regression.
+The date attribute has been removed as not relevant for linear, ridge or lasso regression.
 The instances with missing values have been deleted.
 The target attribute air temperature has been swapped with sea surface temperature to be the last column of the dataset for easier parsing.
 
