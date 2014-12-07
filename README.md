@@ -11,13 +11,13 @@ sparkshellpath="/home/myuser/git/spark/bin/spark-shell"
 mvn clean compile assembly:single
 ```
 Note: 
-* Ensure the variable sparkshellpath is pointing to your spark-shell 
+* Ensure the variable `sparkshellpath` is pointing to your spark-shell 
 
 ##Documentaion
-For each supported [Apache Spark] MLLib algorithm there is a scala file that generates a simple model and exports it to an xml file in PMML format. 
-The scala also runs `model.predict` on some test instances of the training data set. 
-The java evaluator (using [JPMML Evaluator] and acting as a decoupled application to [Apache Spark]) loads the exported PMML and run the prediction on the same test instances used for `model.predict`. 
-The predictions made by [Apache Spark] and [JPMML Evaluator] should be produce comparable results, therefore proving the PMML export from [Apache Spark] is working as expected. 
+For each supported [Apache Spark] MLLib algorithm there is a scala file that generates a simple model and exports it to an xml file in PMML format.   
+The scala also runs `model.predict` on some test instances of the training data set.   
+The java evaluator (using [JPMML Evaluator] and acting as a decoupled application to [Apache Spark]) loads the exported PMML and run the prediction on the same test instances used for `model.predict`.   
+The prediction made by [Apache Spark] and [JPMML Evaluator] produces comparable results, therefore proving the PMML export from [Apache Spark] works as expected.
 
 ##K-Means Clustering
 ```sh
