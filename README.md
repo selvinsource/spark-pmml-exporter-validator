@@ -13,7 +13,7 @@ mvn clean compile assembly:single
 Note: 
 * Ensure the variable `sparkshellpath` is pointing to your spark-shell 
 
-##Documentaion
+##Documentation
 For each supported [Apache Spark] MLLib algorithm there is a scala file that generates a simple model and exports it to an xml file in PMML format.   
 The scala also runs `model.predict` on some test instances of the training data set.   
 The java evaluator (using [JPMML Evaluator] and acting as a decoupled application to [Apache Spark]) loads the exported PMML and run the prediction on the same test instances used for `model.predict`.   
