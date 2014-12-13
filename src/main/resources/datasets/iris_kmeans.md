@@ -9,7 +9,7 @@ Attribute Information:
 * 4. petal width in cm
 
 Note:
-* The class attribute (5th column) has been removed from the original dataset as not needed for the clustering algorithm 
+* The target attribute (5th column) has been removed from the original dataset as not needed for the clustering algorithm 
 
 ###References
 * [UCI Machine Learning Repository] University of California, School of Information and Computer Science

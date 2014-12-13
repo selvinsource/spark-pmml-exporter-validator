@@ -60,6 +60,14 @@ public class SparkPMMLExporterValidator {
 	    	 System.out.println(ModelType.LassoModel + " selected");
 	    	 evaluateLinearRegressionModel(createEvaluator(exportedModelsPath + "lassoregression.xml"));
 	         break;
+	     case SVMModel:
+	    	 System.out.println(ModelType.SVMModel + " selected");
+	    	 evaluateLinearSVMModel(createEvaluator(exportedModelsPath + "linearsvm.xml"));
+	         break;
+	     case LogisticRegressionModel:
+	    	 System.out.println(ModelType.LogisticRegressionModel + " selected");
+	    	 evaluateBinaryClassificationModel(createEvaluator(exportedModelsPath + "logisticregression.xml"));
+	         break;
 	     default:
 	    	 System.out.println("Model selected not implemented");
 	    	 return;
@@ -93,12 +101,36 @@ public class SparkPMMLExporterValidator {
 		
 		Number num;
 
-		num = SparkPMMLExporterValidator.<Number>evaluate(new Double[]{8.96,-140.32,-6.3,-6.4,83.5,27.57}, evaluator);
-		System.out.println("Predicted value for new Double[]{8.96,-140.32,-6.3,-6.4,83.5,27.57}: " + num);
-		num = SparkPMMLExporterValidator.<Number>evaluate(new Double[]{-1.98,-110.0,-4.5,0.7,88.3,25.34}, evaluator);
-		System.out.println("Predicted value for new Double[]{-1.98,-110.0,-4.5,0.7,88.3,25.34}: " + num);
+		num = SparkPMMLExporterValidator.<Number>evaluate(new Double[]{7.4,0.7,0.0,1.9,0.076,11.0,34.0,0.9978,3.51,0.56,9.4}, evaluator);
+		System.out.println("Predicted value for new Double[]{7.4,0.7,0.0,1.9,0.076,11.0,34.0,0.9978,3.51,0.56,9.4}: " + num);
+		num = SparkPMMLExporterValidator.<Number>evaluate(new Double[]{11.5,0.54,0.71,4.4,0.124,6.0,15.0,0.9984,3.01,0.83,11.8}, evaluator);
+		System.out.println("Predicted value for new Double[]{11.5,0.54,0.71,4.4,0.124,6.0,15.0,0.9984,3.01,0.83,11.8}: " + num);
+
+	}
+	
+	private static void evaluateLinearSVMModel(Evaluator evaluator){
 		
-	}	
+		Number num;
+
+		num = SparkPMMLExporterValidator.<Number>evaluate(new Double[]{5.0,1.0,1.0,1.0,2.0,1.0,3.0,1.0,1.0}, evaluator);
+		System.out.println("Note: for linear SVM, if predicted value > 0, the outcome is positive (Class = 1), or negative otherwise (Class = 0)");
+		System.out.println("Predicted value for new Double[]{5.0,1.0,1.0,1.0,2.0,1.0,3.0,1.0,1.0}: " + num);
+		num = SparkPMMLExporterValidator.<Number>evaluate(new Double[]{10.0,8.0,10.0,10.0,6.0,1.0,3.0,1.0,10.0}, evaluator);
+		System.out.println("Predicted value for new Double[]{10.0,8.0,10.0,10.0,6.0,1.0,3.0,1.0,10.0}: " + num);
+		
+	}
+	
+	@SuppressWarnings("rawtypes")
+	private static void evaluateBinaryClassificationModel(Evaluator evaluator){
+		
+		ClassificationMap map;
+
+		map = SparkPMMLExporterValidator.<ClassificationMap>evaluate(new Double[]{5.0,1.0,1.0,1.0,2.0,1.0,3.0,1.0,1.0}, evaluator);
+		System.out.println("Class value for new Double[]{5.0,1.0,1.0,1.0,2.0,1.0,3.0,1.0,1.0}: " + map.getResult());
+		map = SparkPMMLExporterValidator.<ClassificationMap>evaluate(new Double[]{10.0,8.0,10.0,10.0,6.0,1.0,3.0,1.0,10.0}, evaluator);
+		System.out.println("Class value for new Double[]{10.0,8.0,10.0,10.0,6.0,1.0,3.0,1.0,10.0}: " + map.getResult());
+		
+	}
 	
 	private static Evaluator createEvaluator(String filePath) throws SAXException, JAXBException, IOException{
 		InputStream is = new FileInputStream(new File(filePath));

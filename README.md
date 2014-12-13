@@ -30,7 +30,7 @@ java -jar target/spark-pmml-exporter-validator-1.0.0-SNAPSHOT-jar-with-dependenc
 ##Linear Regression
 ```sh
 cd src/main/resources/spark_shell_exporter/
-$sparkshellpath < linearregression_elinino.scala
+$sparkshellpath < linearregression_winequalityred.scala
 cd $sparkvalidatorpath 
 java -jar target/spark-pmml-exporter-validator-1.0.0-SNAPSHOT-jar-with-dependencies.jar LinearRegressionModel
 ```
@@ -38,7 +38,7 @@ java -jar target/spark-pmml-exporter-validator-1.0.0-SNAPSHOT-jar-with-dependenc
 ##Ridge Regression
 ```sh
 cd src/main/resources/spark_shell_exporter/
-$sparkshellpath < ridgeregression_elinino.scala
+$sparkshellpath < ridgeregression_winequalityred.scala
 cd $sparkvalidatorpath 
 java -jar target/spark-pmml-exporter-validator-1.0.0-SNAPSHOT-jar-with-dependencies.jar RidgeRegressionModel
 ```
@@ -46,13 +46,26 @@ java -jar target/spark-pmml-exporter-validator-1.0.0-SNAPSHOT-jar-with-dependenc
 ##Lasso Regression
 ```sh
 cd src/main/resources/spark_shell_exporter/
-$sparkshellpath < lassoregression_elinino.scala
+$sparkshellpath < lassoregression_winequalityred.scala
 cd $sparkvalidatorpath 
 java -jar target/spark-pmml-exporter-validator-1.0.0-SNAPSHOT-jar-with-dependencies.jar LassoModel
 ```
 
+##Linear SVM
+```sh
+cd src/main/resources/spark_shell_exporter/
+$sparkshellpath < linearsvm_breastcancerwisconsin.scala
+cd $sparkvalidatorpath 
+java -jar target/spark-pmml-exporter-validator-1.0.0-SNAPSHOT-jar-with-dependencies.jar SVMModel
+```
+
 ##Logistic Regression
-...
+```sh
+cd src/main/resources/spark_shell_exporter/
+$sparkshellpath < logisticregression_breastcancerwisconsin.scala
+cd $sparkvalidatorpath 
+java -jar target/spark-pmml-exporter-validator-1.0.0-SNAPSHOT-jar-with-dependencies.jar LogisticRegressionModel
+```
 
 [JPMML Evaluator]:https://github.com/jpmml/jpmml-evaluator
 [Apache Spark]:https://github.com/apache/spark

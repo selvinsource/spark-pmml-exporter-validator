@@ -2,15 +2,20 @@
 <PMML xmlns="http://www.dmg.org/PMML-4_2">
     <Header description="linear regression">
         <Application name="Apache Spark MLlib"/>
-        <Timestamp>2014-12-05T07:42:57</Timestamp>
+        <Timestamp>2014-12-13T19:17:32</Timestamp>
     </Header>
-    <DataDictionary numberOfFields="7">
+    <DataDictionary numberOfFields="12">
         <DataField name="field_0" optype="continuous" dataType="double"/>
         <DataField name="field_1" optype="continuous" dataType="double"/>
         <DataField name="field_2" optype="continuous" dataType="double"/>
         <DataField name="field_3" optype="continuous" dataType="double"/>
         <DataField name="field_4" optype="continuous" dataType="double"/>
         <DataField name="field_5" optype="continuous" dataType="double"/>
+        <DataField name="field_6" optype="continuous" dataType="double"/>
+        <DataField name="field_7" optype="continuous" dataType="double"/>
+        <DataField name="field_8" optype="continuous" dataType="double"/>
+        <DataField name="field_9" optype="continuous" dataType="double"/>
+        <DataField name="field_10" optype="continuous" dataType="double"/>
         <DataField name="target" optype="continuous" dataType="double"/>
     </DataDictionary>
     <RegressionModel modelName="linear regression" functionName="regression">
@@ -21,15 +26,25 @@
             <MiningField name="field_3" usageType="active"/>
             <MiningField name="field_4" usageType="active"/>
             <MiningField name="field_5" usageType="active"/>
+            <MiningField name="field_6" usageType="active"/>
+            <MiningField name="field_7" usageType="active"/>
+            <MiningField name="field_8" usageType="active"/>
+            <MiningField name="field_9" usageType="active"/>
+            <MiningField name="field_10" usageType="active"/>
             <MiningField name="target" usageType="target"/>
         </MiningSchema>
-        <RegressionTable intercept="1.0035698885211664">
-            <NumericPredictor name="field_0" coefficient="-0.0012362959888529807"/>
-            <NumericPredictor name="field_1" coefficient="0.004156044796905159"/>
-            <NumericPredictor name="field_2" coefficient="-0.015945280338501493"/>
-            <NumericPredictor name="field_3" coefficient="-0.0044735475681687694"/>
-            <NumericPredictor name="field_4" coefficient="0.2775015362963145"/>
-            <NumericPredictor name="field_5" coefficient="0.10808995660595046"/>
+        <RegressionTable intercept="1.0201815696767644">
+            <NumericPredictor name="field_0" coefficient="0.1689895369067612"/>
+            <NumericPredictor name="field_1" coefficient="0.008974439783439956"/>
+            <NumericPredictor name="field_2" coefficient="0.005761665456114986"/>
+            <NumericPredictor name="field_3" coefficient="0.03965116924192467"/>
+            <NumericPredictor name="field_4" coefficient="0.0015772624726305903"/>
+            <NumericPredictor name="field_5" coefficient="0.03834175646241939"/>
+            <NumericPredictor name="field_6" coefficient="-0.004738410637328641"/>
+            <NumericPredictor name="field_7" coefficient="0.020100158725217986"/>
+            <NumericPredictor name="field_8" coefficient="0.06708988866378976"/>
+            <NumericPredictor name="field_9" coefficient="0.013970059996020344"/>
+            <NumericPredictor name="field_10" coefficient="0.2236018085731058"/>
         </RegressionTable>
     </RegressionModel>
 </PMML>

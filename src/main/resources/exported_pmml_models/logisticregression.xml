@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <PMML xmlns="http://www.dmg.org/PMML-4_2">
-    <Header description="ridge regression">
+    <Header description="logistic regression">
         <Application name="Apache Spark MLlib"/>
-        <Timestamp>2014-12-13T19:18:40</Timestamp>
+        <Timestamp>2014-12-13T19:26:01</Timestamp>
     </Header>
-    <DataDictionary numberOfFields="12">
+    <DataDictionary numberOfFields="10">
         <DataField name="field_0" optype="continuous" dataType="double"/>
         <DataField name="field_1" optype="continuous" dataType="double"/>
         <DataField name="field_2" optype="continuous" dataType="double"/>
@@ -14,11 +14,9 @@
         <DataField name="field_6" optype="continuous" dataType="double"/>
         <DataField name="field_7" optype="continuous" dataType="double"/>
         <DataField name="field_8" optype="continuous" dataType="double"/>
-        <DataField name="field_9" optype="continuous" dataType="double"/>
-        <DataField name="field_10" optype="continuous" dataType="double"/>
-        <DataField name="target" optype="continuous" dataType="double"/>
+        <DataField name="target" optype="categorical" dataType="string"/>
     </DataDictionary>
-    <RegressionModel modelName="ridge regression" functionName="regression">
+    <RegressionModel modelName="logistic regression" functionName="classification" normalizationMethod="logit">
         <MiningSchema>
             <MiningField name="field_0" usageType="active"/>
             <MiningField name="field_1" usageType="active"/>
@@ -29,22 +27,19 @@
             <MiningField name="field_6" usageType="active"/>
             <MiningField name="field_7" usageType="active"/>
             <MiningField name="field_8" usageType="active"/>
-            <MiningField name="field_9" usageType="active"/>
-            <MiningField name="field_10" usageType="active"/>
             <MiningField name="target" usageType="target"/>
         </MiningSchema>
-        <RegressionTable intercept="1.0199951030203305">
-            <NumericPredictor name="field_0" coefficient="0.16898495603845115"/>
-            <NumericPredictor name="field_1" coefficient="0.008974261188437586"/>
-            <NumericPredictor name="field_2" coefficient="0.005761475980762043"/>
-            <NumericPredictor name="field_3" coefficient="0.03965024696435522"/>
-            <NumericPredictor name="field_4" coefficient="0.0015772247150636826"/>
-            <NumericPredictor name="field_5" coefficient="0.03834488669816944"/>
-            <NumericPredictor name="field_6" coefficient="-0.00473496413145201"/>
-            <NumericPredictor name="field_7" coefficient="0.020099574261119527"/>
-            <NumericPredictor name="field_8" coefficient="0.06708792930495236"/>
-            <NumericPredictor name="field_9" coefficient="0.013969598178100303"/>
-            <NumericPredictor name="field_10" coefficient="0.22359484473697233"/>
+        <RegressionTable intercept="-1.2017315096036028" targetCategory="1">
+            <NumericPredictor name="field_0" coefficient="-0.23317691676069968"/>
+            <NumericPredictor name="field_1" coefficient="0.7362274594961988"/>
+            <NumericPredictor name="field_2" coefficient="0.29963728232023945"/>
+            <NumericPredictor name="field_3" coefficient="0.12808536985618849"/>
+            <NumericPredictor name="field_4" coefficient="-0.6685730962600478"/>
+            <NumericPredictor name="field_5" coefficient="0.5167506795846374"/>
+            <NumericPredictor name="field_6" coefficient="-0.4102598939495898"/>
+            <NumericPredictor name="field_7" coefficient="0.30828953391373587"/>
+            <NumericPredictor name="field_8" coefficient="-0.17787877313941056"/>
         </RegressionTable>
+        <RegressionTable intercept="0.0" targetCategory="0"/>
     </RegressionModel>
 </PMML>
