@@ -19,7 +19,7 @@ The scala also runs `model.predict` on some test instances of the training data 
 The java evaluator (using [JPMML Evaluator] and acting as a decoupled application to [Apache Spark]) loads the exported PMML and run the prediction on the same test instances used for `model.predict`.   
 The prediction made by [Apache Spark] and [JPMML Evaluator] produces comparable results, therefore proving the PMML export from [Apache Spark] works as expected.
 
-##Dataset
+##Datasets
 The following datasets have been used:
 * [Iris]
 * [Breast Cancer Wisconsin]
