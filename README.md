@@ -19,6 +19,11 @@ The scala also runs `model.predict` on some test instances of the training data 
 The java evaluator (using [JPMML Evaluator] and acting as a decoupled application to [Apache Spark]) loads the exported PMML and run the prediction on the same test instances used for `model.predict`.   
 The prediction made by [Apache Spark] and [JPMML Evaluator] produces comparable results, therefore proving the PMML export from [Apache Spark] works as expected.
 
+##Dataset
+[Iris]
+[Breast Cancer Wisconsin]
+[Wine Quality]
+
 ##K-Means Clustering
 ```sh
 cd src/main/resources/spark_shell_exporter/
@@ -69,3 +74,7 @@ java -jar target/spark-pmml-exporter-validator-1.0.0-SNAPSHOT-jar-with-dependenc
 
 [JPMML Evaluator]:https://github.com/jpmml/jpmml-evaluator
 [Apache Spark]:https://github.com/apache/spark
+[Iris]:https://github.com/selvinsource/spark-pmml-exporter-validator/blob/master/src/main/resources/datasets/iris_kmeans.md
+[Breast Cancer Wisconsin]:https://github.com/selvinsource/spark-pmml-exporter-validator/blob/master/src/main/resources/datasets/breastcancerwisconsin_binaryclassification.md
+[Wine Quality]:https://github.com/selvinsource/spark-pmml-exporter-validator/blob/master/src/main/resources/datasets/winequalityred_linearregression.md
+
