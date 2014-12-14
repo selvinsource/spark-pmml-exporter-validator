@@ -20,9 +20,10 @@ The java evaluator (using [JPMML Evaluator] and acting as a decoupled applicatio
 The prediction made by [Apache Spark] and [JPMML Evaluator] produces comparable results, therefore proving the PMML export from [Apache Spark] works as expected.
 
 ##Dataset
-[Iris]
-[Breast Cancer Wisconsin]
-[Wine Quality]
+The following datasets have been used:
+* [Iris]
+* [Breast Cancer Wisconsin]
+* [Wine Quality]
 
 ##K-Means Clustering
 ```sh
