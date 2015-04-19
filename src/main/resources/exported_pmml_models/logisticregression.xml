@@ -2,7 +2,7 @@
 <PMML xmlns="http://www.dmg.org/PMML-4_2">
     <Header description="logistic regression">
         <Application name="Apache Spark MLlib" version="1.4.0-SNAPSHOT"/>
-        <Timestamp>2015-04-19T17:43:26</Timestamp>
+        <Timestamp>2015-04-19T17:55:19</Timestamp>
     </Header>
     <DataDictionary numberOfFields="10">
         <DataField name="field_0" optype="continuous" dataType="double"/>
