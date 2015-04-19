@@ -1,7 +1,6 @@
 import org.apache.spark.mllib.classification.LogisticRegressionWithSGD
 import org.apache.spark.mllib.regression.LabeledPoint
 import org.apache.spark.mllib.linalg.Vectors
-import org.apache.spark.mllib.export.ModelExporter
 
 // Load and parse the data
 val data = sc.textFile("../datasets/breastcancerwisconsin_binaryclassification.csv")
@@ -16,7 +15,7 @@ val model = logistic.run(parsedData)
 // model.clearThreshold()
 
 // Export logistic regression model to PMML
-ModelExporter.toPMML(model,"../exported_pmml_models/logisticregression.xml")
+model.toPMML("../exported_pmml_models/logisticregression.xml")
 
 // Test model on training data
 // First from breastcancerwisconsin_binaryclassification.csv (Class: 0)

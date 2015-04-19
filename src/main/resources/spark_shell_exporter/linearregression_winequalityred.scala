@@ -1,7 +1,6 @@
 import org.apache.spark.mllib.regression.LinearRegressionWithSGD
 import org.apache.spark.mllib.regression.LabeledPoint
 import org.apache.spark.mllib.linalg.Vectors
-import org.apache.spark.mllib.export.ModelExporter
 
 // Load and parse the data
 val data = sc.textFile("../datasets/winequalityred_linearregression.csv")
@@ -16,7 +15,7 @@ regression.optimizer.setStepSize(0.001)
 val model = regression.run(parsedData)
 
 // Export linear regression model to PMML
-ModelExporter.toPMML(model,"../exported_pmml_models/linearregression.xml")
+model.toPMML("../exported_pmml_models/linearregression.xml")
 
 // Test model on training data
 // First from winequalityred_linearregression.csv (quality: 5)

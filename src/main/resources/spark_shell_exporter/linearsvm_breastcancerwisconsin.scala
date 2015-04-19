@@ -1,7 +1,6 @@
 import org.apache.spark.mllib.classification.SVMWithSGD
 import org.apache.spark.mllib.regression.LabeledPoint
 import org.apache.spark.mllib.linalg.Vectors
-import org.apache.spark.mllib.export.ModelExporter
 
 // Load and parse the data
 val data = sc.textFile("../datasets/breastcancerwisconsin_binaryclassification.csv")
@@ -16,7 +15,7 @@ val model = svm.run(parsedData)
 model.clearThreshold()
 
 // Export linear svm model to PMML
-ModelExporter.toPMML(model,"../exported_pmml_models/linearsvm.xml")
+model.toPMML("../exported_pmml_models/linearsvm.xml")
 
 // Test model on training data
 // First from breastcancerwisconsin_binaryclassification.csv (Class: 0)

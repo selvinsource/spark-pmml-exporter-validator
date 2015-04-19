@@ -1,6 +1,5 @@
 import org.apache.spark.mllib.clustering.KMeans
 import org.apache.spark.mllib.linalg.Vectors
-import org.apache.spark.mllib.export.ModelExporter
 
 // Load and parse the data
 val data = sc.textFile("../datasets/iris_kmeans.csv")
@@ -12,7 +11,7 @@ val numClusters = 3
 val kmeansModel = KMeans.train(parsedData, numClusters, numIterations)
 
 // Export clustering model to PMML
-ModelExporter.toPMML(kmeansModel,"../exported_pmml_models/kmeans.xml")
+kmeansModel.toPMML("../exported_pmml_models/kmeans.xml")
 
 // Test model on training data
 // Show cluster centers
