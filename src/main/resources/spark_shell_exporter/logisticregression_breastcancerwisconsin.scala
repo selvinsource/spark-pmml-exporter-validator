@@ -13,6 +13,11 @@ val parsedData = data.map { line =>
 var logistic = new LogisticRegressionWithSGD().setIntercept(true)
 val model = logistic.run(parsedData)
 // model.clearThreshold()
+// model.setThreshold(0.5)
+// model.setThreshold(0.7)
+// model.setThreshold(0.03)
+// model.setThreshold(0.0)
+// model.setThreshold(1.0)
 
 // Export logistic regression model to PMML
 model.toPMML("../exported_pmml_models/logisticregression.xml")

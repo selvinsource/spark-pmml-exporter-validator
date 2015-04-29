@@ -12,7 +12,9 @@ val parsedData = data.map { line =>
 // Build linear svm model
 var svm = new SVMWithSGD().setIntercept(true)
 val model = svm.run(parsedData)
-model.clearThreshold()
+// model.clearThreshold()
+// model.setThreshold(0.0)
+// model.setThreshold(1.0)
 
 // Export linear svm model to PMML
 model.toPMML("../exported_pmml_models/linearsvm.xml")

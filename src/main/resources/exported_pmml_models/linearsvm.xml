@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <PMML xmlns="http://www.dmg.org/PMML-4_2">
-    <Header description="linear SVM: if predicted value &gt; 0, the outcome is positive, or negative otherwise">
+    <Header description="linear SVM">
         <Application name="Apache Spark MLlib" version="1.4.0-SNAPSHOT"/>
-        <Timestamp>2015-04-19T17:57:56</Timestamp>
+        <Timestamp>2015-04-29T08:53:49</Timestamp>
     </Header>
     <DataDictionary numberOfFields="10">
         <DataField name="field_0" optype="continuous" dataType="double"/>
@@ -14,9 +14,9 @@
         <DataField name="field_6" optype="continuous" dataType="double"/>
         <DataField name="field_7" optype="continuous" dataType="double"/>
         <DataField name="field_8" optype="continuous" dataType="double"/>
-        <DataField name="target" optype="continuous" dataType="double"/>
+        <DataField name="target" optype="categorical" dataType="string"/>
     </DataDictionary>
-    <RegressionModel modelName="linear SVM: if predicted value &gt; 0, the outcome is positive, or negative otherwise" functionName="regression">
+    <RegressionModel modelName="linear SVM" functionName="classification" normalizationMethod="none">
         <MiningSchema>
             <MiningField name="field_0" usageType="active"/>
             <MiningField name="field_1" usageType="active"/>
@@ -29,7 +29,7 @@
             <MiningField name="field_8" usageType="active"/>
             <MiningField name="target" usageType="target"/>
         </MiningSchema>
-        <RegressionTable intercept="-1.2973802920137774">
+        <RegressionTable intercept="-1.2973802920137774" targetCategory="1">
             <NumericPredictor name="field_0" coefficient="-0.0818303650185629"/>
             <NumericPredictor name="field_1" coefficient="0.5609579878511747"/>
             <NumericPredictor name="field_2" coefficient="0.1382792114252377"/>
@@ -40,5 +40,6 @@
             <NumericPredictor name="field_7" coefficient="0.2548602390316011"/>
             <NumericPredictor name="field_8" coefficient="-0.10271528637619945"/>
         </RegressionTable>
+        <RegressionTable intercept="0.0" targetCategory="0"/>
     </RegressionModel>
 </PMML>

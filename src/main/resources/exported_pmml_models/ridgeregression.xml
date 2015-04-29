@@ -2,7 +2,7 @@
 <PMML xmlns="http://www.dmg.org/PMML-4_2">
     <Header description="ridge regression">
         <Application name="Apache Spark MLlib" version="1.4.0-SNAPSHOT"/>
-        <Timestamp>2015-04-19T17:52:56</Timestamp>
+        <Timestamp>2015-04-28T07:27:51</Timestamp>
     </Header>
     <DataDictionary numberOfFields="12">
         <DataField name="field_0" optype="continuous" dataType="double"/>
