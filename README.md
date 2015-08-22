@@ -1,6 +1,7 @@
 ##Spark PMML Exporter Validator
 
 Using [JPMML Evaluator] to validate the PMML models exported from [Apache Spark].
+Requires Apache Spark 1.6 or above.
 
 ##Installation
 ```sh
@@ -30,7 +31,7 @@ The following datasets have been used:
 cd src/main/resources/spark_shell_exporter/
 $sparkshellpath < kmeans_iris.scala
 cd $sparkvalidatorpath 
-java -jar target/spark-pmml-exporter-validator-1.0.0-SNAPSHOT-jar-with-dependencies.jar KMeansModel
+java -jar target/spark-pmml-exporter-validator-1.1.0-SNAPSHOT-jar-with-dependencies.jar KMeansModel
 ```
 
 ##Linear Regression
@@ -38,7 +39,7 @@ java -jar target/spark-pmml-exporter-validator-1.0.0-SNAPSHOT-jar-with-dependenc
 cd src/main/resources/spark_shell_exporter/
 $sparkshellpath < linearregression_winequalityred.scala
 cd $sparkvalidatorpath 
-java -jar target/spark-pmml-exporter-validator-1.0.0-SNAPSHOT-jar-with-dependencies.jar LinearRegressionModel
+java -jar target/spark-pmml-exporter-validator-1.1.0-SNAPSHOT-jar-with-dependencies.jar LinearRegressionModel
 ```
 
 ##Ridge Regression
@@ -46,7 +47,7 @@ java -jar target/spark-pmml-exporter-validator-1.0.0-SNAPSHOT-jar-with-dependenc
 cd src/main/resources/spark_shell_exporter/
 $sparkshellpath < ridgeregression_winequalityred.scala
 cd $sparkvalidatorpath 
-java -jar target/spark-pmml-exporter-validator-1.0.0-SNAPSHOT-jar-with-dependencies.jar RidgeRegressionModel
+java -jar target/spark-pmml-exporter-validator-1.1.0-SNAPSHOT-jar-with-dependencies.jar RidgeRegressionModel
 ```
 
 ##Lasso Regression
@@ -54,23 +55,39 @@ java -jar target/spark-pmml-exporter-validator-1.0.0-SNAPSHOT-jar-with-dependenc
 cd src/main/resources/spark_shell_exporter/
 $sparkshellpath < lassoregression_winequalityred.scala
 cd $sparkvalidatorpath 
-java -jar target/spark-pmml-exporter-validator-1.0.0-SNAPSHOT-jar-with-dependencies.jar LassoModel
+java -jar target/spark-pmml-exporter-validator-1.1.0-SNAPSHOT-jar-with-dependencies.jar LassoModel
 ```
 
-##Linear SVM
+##Linear SVM (Binary Classification)
 ```sh
 cd src/main/resources/spark_shell_exporter/
 $sparkshellpath < linearsvm_breastcancerwisconsin.scala
 cd $sparkvalidatorpath 
-java -jar target/spark-pmml-exporter-validator-1.0.0-SNAPSHOT-jar-with-dependencies.jar SVMModel
+java -jar target/spark-pmml-exporter-validator-1.1.0-SNAPSHOT-jar-with-dependencies.jar SVMModel
 ```
 
-##Logistic Regression
+##Logistic Regression (Binary Classification)
 ```sh
 cd src/main/resources/spark_shell_exporter/
 $sparkshellpath < logisticregression_breastcancerwisconsin.scala
 cd $sparkvalidatorpath 
-java -jar target/spark-pmml-exporter-validator-1.0.0-SNAPSHOT-jar-with-dependencies.jar LogisticRegressionModel
+java -jar target/spark-pmml-exporter-validator-1.1.0-SNAPSHOT-jar-with-dependencies.jar LogisticRegressionModel
+```
+
+##Decision Tree (Binary Classification)
+```sh
+cd src/main/resources/spark_shell_exporter/
+$sparkshellpath < decisiontree_breastcancerwisconsin.scala
+cd $sparkvalidatorpath 
+java -jar target/spark-pmml-exporter-validator-1.1.0-SNAPSHOT-jar-with-dependencies.jar DecisionTreeModel
+```
+
+##Decision Tree (Regression)
+```sh
+cd src/main/resources/spark_shell_exporter/
+$sparkshellpath < decisiontree_winequalityred.scala
+cd $sparkvalidatorpath 
+java -jar target/spark-pmml-exporter-validator-1.1.0-SNAPSHOT-jar-with-dependencies.jar DecisionTreeModel
 ```
 
 [JPMML Evaluator]:https://github.com/jpmml/jpmml-evaluator
