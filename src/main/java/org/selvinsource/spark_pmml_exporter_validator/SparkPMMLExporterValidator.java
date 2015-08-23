@@ -32,7 +32,7 @@ public class SparkPMMLExporterValidator {
 	private final static String exportedModelsPath = "src/main/resources/exported_pmml_models/";
 	
 	public enum ModelType {
-		KMeansModel,DecisionTreeModel,LogisticRegressionModel,NaiveBayesModel,SVMModel,LinearRegressionModel,RidgeRegressionModel,LassoModel;
+		KMeansModel,DecisionTreeRegressionModel,DecisionTreeClassificationModel,LogisticRegressionModel,NaiveBayesModel,SVMModel,LinearRegressionModel,RidgeRegressionModel,LassoModel;
     }
 	
 	public static void main( String[] args ) throws JAXBException, DatatypeConfigurationException, SAXException, IOException
@@ -67,6 +67,15 @@ public class SparkPMMLExporterValidator {
 	     case LogisticRegressionModel:
 	    	 System.out.println(ModelType.LogisticRegressionModel + " selected");
 	    	 evaluateBinaryClassificationModel(createEvaluator(exportedModelsPath + "logisticregression.xml"));
+	         break;
+	     case DecisionTreeRegressionModel:
+	    	 System.out.println(ModelType.DecisionTreeRegressionModel + " selected");
+	    	 //TODO
+	    	 //evaluateRegressionTreeModel(createEvaluator(exportedModelsPath + "decisiontree_regression.xml"));
+	         break;
+	     case DecisionTreeClassificationModel:
+	    	 System.out.println(ModelType.DecisionTreeClassificationModel + " selected");
+	    	 evaluateClassificationTreeModel(createEvaluator(exportedModelsPath + "decisiontree_classification.xml"));
 	         break;
 	     default:
 	    	 System.out.println("Model selected not implemented");
@@ -116,6 +125,19 @@ public class SparkPMMLExporterValidator {
 		map = SparkPMMLExporterValidator.<ClassificationMap>evaluate(new Double[]{5.0,1.0,1.0,1.0,2.0,1.0,3.0,1.0,1.0}, evaluator);
 		System.out.println("Class value for new Double[]{5.0,1.0,1.0,1.0,2.0,1.0,3.0,1.0,1.0}: " + map.getResult());
 		map = SparkPMMLExporterValidator.<ClassificationMap>evaluate(new Double[]{10.0,8.0,10.0,10.0,6.0,1.0,3.0,1.0,10.0}, evaluator);
+		System.out.println("Class value for new Double[]{10.0,8.0,10.0,10.0,6.0,1.0,3.0,1.0,10.0}: " + map.getResult());
+		
+	}
+	
+	@SuppressWarnings("rawtypes")
+	private static void evaluateClassificationTreeModel(Evaluator evaluator){
+		
+		ClassificationMap map;
+		//TODO: to review, must provide subset of fields in this order field_0, field_5, field_7, field_1
+		//TODO: A possible alternative solution is to export all mining fields in the same order of the input data
+		map = SparkPMMLExporterValidator.<ClassificationMap>evaluate(new Double[]{5.0,1.0,1.0,1.0}, evaluator);
+		System.out.println("Class value for new Double[]{5.0,1.0,1.0,1.0,2.0,1.0,3.0,1.0,1.0}: " + map.getResult());
+		map = SparkPMMLExporterValidator.<ClassificationMap>evaluate(new Double[]{10.0,1.0,1.0,8.0}, evaluator);
 		System.out.println("Class value for new Double[]{10.0,8.0,10.0,10.0,6.0,1.0,3.0,1.0,10.0}: " + map.getResult());
 		
 	}

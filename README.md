@@ -74,12 +74,12 @@ cd $sparkvalidatorpath
 java -jar target/spark-pmml-exporter-validator-1.1.0-SNAPSHOT-jar-with-dependencies.jar LogisticRegressionModel
 ```
 
-##Decision Tree (Binary Classification)
+##Decision Tree (Classification)
 ```sh
 cd src/main/resources/spark_shell_exporter/
 $sparkshellpath < decisiontree_breastcancerwisconsin.scala
 cd $sparkvalidatorpath 
-java -jar target/spark-pmml-exporter-validator-1.1.0-SNAPSHOT-jar-with-dependencies.jar DecisionTreeModel
+java -jar target/spark-pmml-exporter-validator-1.1.0-SNAPSHOT-jar-with-dependencies.jar DecisionTreeClassificationModel
 ```
 
 ##Decision Tree (Regression)
@@ -87,7 +87,7 @@ java -jar target/spark-pmml-exporter-validator-1.1.0-SNAPSHOT-jar-with-dependenc
 cd src/main/resources/spark_shell_exporter/
 $sparkshellpath < decisiontree_winequalityred.scala
 cd $sparkvalidatorpath 
-java -jar target/spark-pmml-exporter-validator-1.1.0-SNAPSHOT-jar-with-dependencies.jar DecisionTreeModel
+java -jar target/spark-pmml-exporter-validator-1.1.0-SNAPSHOT-jar-with-dependencies.jar DecisionTreeRegressionModel
 ```
 
 [JPMML Evaluator]:https://github.com/jpmml/jpmml-evaluator
