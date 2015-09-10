@@ -135,9 +135,10 @@ public class SparkPMMLExporterValidator {
 		ClassificationMap map;
 		//TODO: to review, must provide subset of fields in this order field_0, field_5, field_7, field_1
 		//TODO: A possible alternative solution is to export all mining fields in the same order of the input data
-		map = SparkPMMLExporterValidator.<ClassificationMap>evaluate(new Double[]{5.0,1.0,1.0,1.0}, evaluator);
+		//new order of miningFields 0,1,2,3,5,7
+		map = SparkPMMLExporterValidator.<ClassificationMap>evaluate(new Double[]{5.0,1.0,1.0,1.0,1.0,1.0}, evaluator);
 		System.out.println("Class value for new Double[]{5.0,1.0,1.0,1.0,2.0,1.0,3.0,1.0,1.0}: " + map.getResult());
-		map = SparkPMMLExporterValidator.<ClassificationMap>evaluate(new Double[]{10.0,1.0,1.0,8.0}, evaluator);
+		map = SparkPMMLExporterValidator.<ClassificationMap>evaluate(new Double[]{10.0,8.0,10.0,10.0,1.0,1.0}, evaluator);
 		System.out.println("Class value for new Double[]{10.0,8.0,10.0,10.0,6.0,1.0,3.0,1.0,10.0}: " + map.getResult());
 		
 	}
