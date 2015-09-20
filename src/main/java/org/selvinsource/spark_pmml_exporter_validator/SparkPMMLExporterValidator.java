@@ -133,9 +133,7 @@ public class SparkPMMLExporterValidator {
 	private static void evaluateClassificationTreeModel(Evaluator evaluator){
 		
 		ClassificationMap map;
-		//TODO: to review, must provide subset of fields in this order field_0, field_5, field_7, field_1
-		//TODO: A possible alternative solution is to export all mining fields in the same order of the input data
-		//new order of miningFields 0,1,2,3,5,7
+		// Order of miningFields 0,1,2,3,5,7
 		map = SparkPMMLExporterValidator.<ClassificationMap>evaluate(new Double[]{5.0,1.0,1.0,1.0,1.0,1.0}, evaluator);
 		System.out.println("Class value for new Double[]{5.0,1.0,1.0,1.0,2.0,1.0,3.0,1.0,1.0}: " + map.getResult());
 		map = SparkPMMLExporterValidator.<ClassificationMap>evaluate(new Double[]{10.0,8.0,10.0,10.0,1.0,1.0}, evaluator);
@@ -143,15 +141,16 @@ public class SparkPMMLExporterValidator {
 		
 	}
 
-	@SuppressWarnings("rawtypes")
 	private static void evaluateRegressionTreeModel(Evaluator evaluator) {
+		
 		Number num;
 
-		//order of mining fields 0,1,3,4,5,6,7,8,9,10
+		// Order of mining fields 0,1,3,4,5,6,7,8,9,10
 		num = SparkPMMLExporterValidator.<Number>evaluate(new Double[]{7.4,0.7,1.9,0.076,11.0,34.0,0.9978,3.51,0.56,9.4}, evaluator);
 		System.out.println("Predicted value for new Double[]{7.4,0.7,0,1.9,0.076,11,34,0.9978,3.51,0.56,9.4}: " + num);
 		num = SparkPMMLExporterValidator.<Number>evaluate(new Double[]{11.5,0.54,4.4,0.124,6.0,15.0,0.9984,3.01,0.83,11.8}, evaluator);
 		System.out.println("Predicted value for new Double[]{11.5,0.54,0.71,4.4,0.124,6,15,0.9984,3.01,0.83,11.8}: " + num);
+	
 	}
 	
 	private static Evaluator createEvaluator(String filePath) throws SAXException, JAXBException, IOException{
