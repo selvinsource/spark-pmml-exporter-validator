@@ -1,6 +1,6 @@
 ##Spark PMML Exporter Validator
 
-Using [JPMML Evaluator] to validate the PMML models exported from [Apache Spark].
+Using [JPMML Evaluator] to validate the PMML models exported from [Apache Spark].   
 Requires Apache Spark 1.6 or above.
 
 ##Installation
