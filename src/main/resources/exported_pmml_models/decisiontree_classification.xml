@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <PMML xmlns="http://www.dmg.org/PMML-4_2">
     <Header description="decision tree">
-        <Application name="Apache Spark MLlib" version="1.5.0-SNAPSHOT"/>
-        <Timestamp>2015-09-10T07:05:15</Timestamp>
+        <Application name="Apache Spark MLlib" version="1.6.0-SNAPSHOT"/>
+        <Timestamp>2015-09-21T06:32:51</Timestamp>
     </Header>
     <DataDictionary numberOfFields="7">
         <DataField name="field_0" optype="continuous" dataType="double"/>
@@ -11,9 +11,9 @@
         <DataField name="field_3" optype="continuous" dataType="double"/>
         <DataField name="field_5" optype="continuous" dataType="double"/>
         <DataField name="field_7" optype="continuous" dataType="double"/>
-        <DataField name="class" optype="categorical" dataType="string">
-            <Value value="class_0"/>
-            <Value value="class_1"/>
+        <DataField name="class" optype="categorical" dataType="double">
+            <Value value="0.0"/>
+            <Value value="1.0"/>
         </DataField>
     </DataDictionary>
     <TreeModel modelName="decision-tree" functionName="classification" splitCharacteristic="binarySplit">

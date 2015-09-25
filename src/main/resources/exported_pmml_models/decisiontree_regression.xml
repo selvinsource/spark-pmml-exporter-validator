@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <PMML xmlns="http://www.dmg.org/PMML-4_2">
     <Header description="decision tree">
-        <Application name="Apache Spark MLlib" version="1.5.0-SNAPSHOT"/>
-        <Timestamp>2015-09-10T07:22:58</Timestamp>
+        <Application name="Apache Spark MLlib" version="1.6.0-SNAPSHOT"/>
+        <Timestamp>2015-09-21T06:37:13</Timestamp>
     </Header>
-    <DataDictionary numberOfFields="10">
+    <DataDictionary numberOfFields="11">
         <DataField name="field_0" optype="continuous" dataType="double"/>
         <DataField name="field_1" optype="continuous" dataType="double"/>
         <DataField name="field_3" optype="continuous" dataType="double"/>
@@ -15,6 +15,7 @@
         <DataField name="field_8" optype="continuous" dataType="double"/>
         <DataField name="field_9" optype="continuous" dataType="double"/>
         <DataField name="field_10" optype="continuous" dataType="double"/>
+        <DataField name="target" optype="continuous" dataType="double"/>
     </DataDictionary>
     <TreeModel modelName="decision-tree" functionName="regression" splitCharacteristic="binarySplit">
         <MiningSchema>
@@ -28,6 +29,7 @@
             <MiningField name="field_8" usageType="active"/>
             <MiningField name="field_9" usageType="active"/>
             <MiningField name="field_10" usageType="active"/>
+            <MiningField name="target" usageType="target"/>
         </MiningSchema>
         <Node id="1" score="5.6360225140712945">
             <True/>
