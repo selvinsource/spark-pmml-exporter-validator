@@ -2,7 +2,7 @@
 <PMML xmlns="http://www.dmg.org/PMML-4_2">
     <Header description="logistic regression">
         <Application name="Apache Spark MLlib" version="1.6.0-SNAPSHOT"/>
-        <Timestamp>2015-09-25T10:41:48</Timestamp>
+        <Timestamp>2015-10-04T10:17:11</Timestamp>
     </Header>
     <DataDictionary numberOfFields="10">
         <DataField name="field_0" optype="continuous" dataType="double"/>
@@ -29,16 +29,16 @@
             <MiningField name="field_8" usageType="active"/>
             <MiningField name="target" usageType="target"/>
         </MiningSchema>
-        <RegressionTable intercept="-1.2017315096036028" targetCategory="1">
-            <NumericPredictor name="field_0" coefficient="-0.23317691676069968"/>
-            <NumericPredictor name="field_1" coefficient="0.7362274594961988"/>
-            <NumericPredictor name="field_2" coefficient="0.29963728232023945"/>
-            <NumericPredictor name="field_3" coefficient="0.12808536985618849"/>
-            <NumericPredictor name="field_4" coefficient="-0.6685730962600478"/>
-            <NumericPredictor name="field_5" coefficient="0.5167506795846374"/>
-            <NumericPredictor name="field_6" coefficient="-0.4102598939495898"/>
-            <NumericPredictor name="field_7" coefficient="0.30828953391373587"/>
-            <NumericPredictor name="field_8" coefficient="-0.17787877313941056"/>
+        <RegressionTable intercept="-9.737325155536803" targetCategory="1">
+            <NumericPredictor name="field_0" coefficient="0.5369544058526143"/>
+            <NumericPredictor name="field_1" coefficient="0.012192046206011675"/>
+            <NumericPredictor name="field_2" coefficient="0.3252689291392071"/>
+            <NumericPredictor name="field_3" coefficient="0.2385049761432241"/>
+            <NumericPredictor name="field_4" coefficient="0.05426810650985039"/>
+            <NumericPredictor name="field_5" coefficient="0.42866385668478774"/>
+            <NumericPredictor name="field_6" coefficient="0.41803756886149357"/>
+            <NumericPredictor name="field_7" coefficient="0.16369961184910103"/>
+            <NumericPredictor name="field_8" coefficient="0.5294786445637422"/>
         </RegressionTable>
         <RegressionTable intercept="-0.0" targetCategory="0"/>
     </RegressionModel>

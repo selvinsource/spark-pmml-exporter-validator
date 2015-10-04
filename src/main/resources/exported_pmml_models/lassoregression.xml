@@ -2,7 +2,7 @@
 <PMML xmlns="http://www.dmg.org/PMML-4_2">
     <Header description="lasso regression">
         <Application name="Apache Spark MLlib" version="1.6.0-SNAPSHOT"/>
-        <Timestamp>2015-09-25T10:40:46</Timestamp>
+        <Timestamp>2015-10-04T09:33:31</Timestamp>
     </Header>
     <DataDictionary numberOfFields="12">
         <DataField name="field_0" optype="continuous" dataType="double"/>

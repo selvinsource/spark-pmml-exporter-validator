@@ -32,50 +32,61 @@ public class SparkPMMLExporterValidator {
 	private final static String exportedModelsPath = "src/main/resources/exported_pmml_models/";
 	
 	public enum ModelType {
-		KMeansModel,DecisionTreeRegressionModel,DecisionTreeClassificationModel,LogisticRegressionModel,NaiveBayesModel,SVMModel,LinearRegressionModel,RidgeRegressionModel,LassoModel;
+		KMeansModel,
+		DecisionTreeRegressionModel,
+		DecisionTreeClassificationModel,
+		BinaryLogisticRegressionModel,
+		MultiClassLogisticRegressionModel,
+		SVMModel,
+		LinearRegressionModel,
+		RidgeRegressionModel,
+		LassoModel;
     }
 	
 	public static void main( String[] args ) throws JAXBException, DatatypeConfigurationException, SAXException, IOException
 	{
 		
 		if(args.length != 1){
-			System.out.println("Please select a model: KMeansModel, DecisionTreeModel, LogisticRegressionModel, NaiveBayesModel, SVMModel, LinearRegressionModel, RidgeRegressionModel, LassoModel");
+			System.out.println("Please select a model: KMeansModel, DecisionTreeRegressionModel, DecisionTreeClassificationModel, BinaryLogisticRegressionModel, MultiClassLogisticRegressionModel, SVMModel, LinearRegressionModel, RidgeRegressionModel, LassoModel");
 			return;
 		}
 				
 	    switch(ModelType.valueOf(args[0])) {
 	      case KMeansModel:
 	         System.out.println(ModelType.KMeansModel + " selected");
-	         evaluateKMeansModel(createEvaluator(exportedModelsPath + "kmeans.xml"));
+	         evaluateKMeansModelIris(createEvaluator(exportedModelsPath + "kmeans.xml"));
 	         break;
 	     case LinearRegressionModel:
 	    	 System.out.println(ModelType.LinearRegressionModel + " selected");
-	    	 evaluateLinearRegressionModel(createEvaluator(exportedModelsPath + "linearregression.xml"));
+	    	 evaluateLinearRegressionModelWineQuality(createEvaluator(exportedModelsPath + "linearregression.xml"));
 	         break;
 	     case RidgeRegressionModel:
 	    	 System.out.println(ModelType.RidgeRegressionModel + " selected");
-	    	 evaluateLinearRegressionModel(createEvaluator(exportedModelsPath + "ridgeregression.xml"));
+	    	 evaluateLinearRegressionModelWineQuality(createEvaluator(exportedModelsPath + "ridgeregression.xml"));
 	         break;
 	     case LassoModel:
 	    	 System.out.println(ModelType.LassoModel + " selected");
-	    	 evaluateLinearRegressionModel(createEvaluator(exportedModelsPath + "lassoregression.xml"));
+	    	 evaluateLinearRegressionModelWineQuality(createEvaluator(exportedModelsPath + "lassoregression.xml"));
 	         break;
 	     case SVMModel:
 	    	 System.out.println(ModelType.SVMModel + " selected");
-	    	 evaluateBinaryClassificationModel(createEvaluator(exportedModelsPath + "linearsvm.xml"));
+	    	 evaluateBinaryClassificationModelBreastCancer(createEvaluator(exportedModelsPath + "linearsvm.xml"));
 	         break;
-	     case LogisticRegressionModel:
-	    	 System.out.println(ModelType.LogisticRegressionModel + " selected");
-	    	 evaluateBinaryClassificationModel(createEvaluator(exportedModelsPath + "logisticregression.xml"));
+	     case BinaryLogisticRegressionModel:
+	    	 System.out.println(ModelType.BinaryLogisticRegressionModel + " selected");
+	    	 evaluateBinaryClassificationModelBreastCancer(createEvaluator(exportedModelsPath + "logisticregression_binary.xml"));
+	         break;
+	     case MultiClassLogisticRegressionModel:
+	    	 System.out.println(ModelType.MultiClassLogisticRegressionModel + " selected");
+	    	 evaluateMultiClassClassificationModelIris(createEvaluator(exportedModelsPath + "logisticregression_multiclass.xml"));
 	         break;
 	     case DecisionTreeRegressionModel:
 	    	 System.out.println(ModelType.DecisionTreeRegressionModel + " selected");
-	    	 //TODO
-	    	 evaluateRegressionTreeModel(createEvaluator(exportedModelsPath + "decisiontree_regression.xml"));
+	    	 evaluateRegressionTreeModelWineQuality(createEvaluator(exportedModelsPath + "decisiontree_regression.xml"));
 	         break;
 	     case DecisionTreeClassificationModel:
 	    	 System.out.println(ModelType.DecisionTreeClassificationModel + " selected");
-	    	 evaluateClassificationTreeModel(createEvaluator(exportedModelsPath + "decisiontree_classification.xml"));
+	    	 evaluateClassificationTreeModelBreastCancer(createEvaluator(exportedModelsPath + "decisiontree_classification.xml"));
 	         break;
 	     default:
 	    	 System.out.println("Model selected not implemented");
@@ -86,7 +97,7 @@ public class SparkPMMLExporterValidator {
 	}
 
 	@SuppressWarnings("rawtypes")
-	private static void evaluateKMeansModel(Evaluator evaluator){
+	private static void evaluateKMeansModelIris(Evaluator evaluator){
 		
 		ClusteringModelEvaluator cluster = (ClusteringModelEvaluator)evaluator;
 		
@@ -106,7 +117,21 @@ public class SparkPMMLExporterValidator {
 		
 	}
 	
-	private static void evaluateLinearRegressionModel(Evaluator evaluator){
+	@SuppressWarnings("rawtypes")
+	private static void evaluateMultiClassClassificationModelIris(Evaluator evaluator){
+		
+	    ClassificationMap map;
+		
+		map = SparkPMMLExporterValidator.<ClassificationMap>evaluate(new Double[]{5.1,3.5,1.4,0.2}, evaluator);
+		System.out.println("Class value for new Double[]{5.1,3.5,1.4,0.2}: " + map.getResult());
+		map = SparkPMMLExporterValidator.<ClassificationMap>evaluate(new Double[]{6.2,2.9,4.3,1.3}, evaluator);
+		System.out.println("Class value for new Double[]{6.2,2.9,4.3,1.3}: " + map.getResult());
+		map = SparkPMMLExporterValidator.<ClassificationMap>evaluate(new Double[]{5.9,3.0,5.1,1.8}, evaluator);
+		System.out.println("Class value for new Double[]{5.9,3.0,5.1,1.8}: " + map.getResult());
+		
+	}
+	
+	private static void evaluateLinearRegressionModelWineQuality(Evaluator evaluator){
 		
 		Number num;
 
@@ -118,7 +143,7 @@ public class SparkPMMLExporterValidator {
 	}
 	
 	@SuppressWarnings("rawtypes")
-	private static void evaluateBinaryClassificationModel(Evaluator evaluator){
+	private static void evaluateBinaryClassificationModelBreastCancer(Evaluator evaluator){
 		
 		ClassificationMap map;
 
@@ -130,7 +155,7 @@ public class SparkPMMLExporterValidator {
 	}
 	
 	@SuppressWarnings("rawtypes")
-	private static void evaluateClassificationTreeModel(Evaluator evaluator){
+	private static void evaluateClassificationTreeModelBreastCancer(Evaluator evaluator){
 		
 		ClassificationMap map;
 		// Order of miningFields 0,1,2,3,5,7
@@ -141,7 +166,7 @@ public class SparkPMMLExporterValidator {
 		
 	}
 
-	private static void evaluateRegressionTreeModel(Evaluator evaluator) {
+	private static void evaluateRegressionTreeModelWineQuality(Evaluator evaluator) {
 		
 		Number num;
 

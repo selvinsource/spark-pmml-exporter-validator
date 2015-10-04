@@ -7,9 +7,11 @@ Attribute Information:
 * 2. sepal width in cm
 * 3. petal length in cm
 * 4. petal width in cm
+* 5. class: Iris Setosa (0), Iris Versicolour (1), Iris Virginica (2)
 
 Note:
-* The target attribute (5th column) has been removed from the original dataset as not needed for the clustering algorithm 
+The class Iris Setosa, Iris Versicolour and Iris Virginica has been replaced with 0, 1 and 2 labels as required for MLlib classification algorithms
+
 
 ###References
 * [UCI Machine Learning Repository] University of California, School of Information and Computer Science

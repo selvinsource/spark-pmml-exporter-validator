@@ -71,7 +71,15 @@ java -jar target/spark-pmml-exporter-validator-1.1.0-SNAPSHOT-jar-with-dependenc
 cd src/main/resources/spark_shell_exporter/
 $sparkshellpath < logisticregression_breastcancerwisconsin.scala
 cd $sparkvalidatorpath 
-java -jar target/spark-pmml-exporter-validator-1.1.0-SNAPSHOT-jar-with-dependencies.jar LogisticRegressionModel
+java -jar target/spark-pmml-exporter-validator-1.1.0-SNAPSHOT-jar-with-dependencies.jar BinaryLogisticRegressionModel
+```
+
+##Logistic Regression (Multiclass Classification)
+```sh
+cd src/main/resources/spark_shell_exporter/
+$sparkshellpath < logisticregression_iris.scala
+cd $sparkvalidatorpath 
+java -jar target/spark-pmml-exporter-validator-1.1.0-SNAPSHOT-jar-with-dependencies.jar MultiClassLogisticRegressionModel
 ```
 
 ##Decision Tree (Classification)
@@ -92,7 +100,7 @@ java -jar target/spark-pmml-exporter-validator-1.1.0-SNAPSHOT-jar-with-dependenc
 
 [JPMML Evaluator]:https://github.com/jpmml/jpmml-evaluator
 [Apache Spark]:https://github.com/apache/spark
-[Iris]:https://github.com/selvinsource/spark-pmml-exporter-validator/blob/master/src/main/resources/datasets/iris_kmeans.md
-[Breast Cancer Wisconsin]:https://github.com/selvinsource/spark-pmml-exporter-validator/blob/master/src/main/resources/datasets/breastcancerwisconsin_binaryclassification.md
-[Wine Quality]:https://github.com/selvinsource/spark-pmml-exporter-validator/blob/master/src/main/resources/datasets/winequalityred_linearregression.md
+[Iris]:https://github.com/selvinsource/spark-pmml-exporter-validator/blob/master/src/main/resources/datasets/iris.md
+[Breast Cancer Wisconsin]:https://github.com/selvinsource/spark-pmml-exporter-validator/blob/master/src/main/resources/datasets/breastcancerwisconsin.md
+[Wine Quality]:https://github.com/selvinsource/spark-pmml-exporter-validator/blob/master/src/main/resources/datasets/winequalityred.md
 
