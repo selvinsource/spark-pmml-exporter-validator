@@ -40,14 +40,15 @@ public class SparkPMMLExporterValidator {
 		SVMModel,
 		LinearRegressionModel,
 		RidgeRegressionModel,
-		LassoModel;
+		LassoModel,
+		NaiveBayesClassificationModel;
     }
 	
 	public static void main( String[] args ) throws JAXBException, DatatypeConfigurationException, SAXException, IOException
 	{
 		
 		if(args.length != 1){
-			System.out.println("Please select a model: KMeansModel, DecisionTreeRegressionModel, DecisionTreeClassificationModel, BinaryLogisticRegressionModel, MultiClassLogisticRegressionModel, SVMModel, LinearRegressionModel, RidgeRegressionModel, LassoModel");
+			System.out.println("Please select a model: KMeansModel, DecisionTreeRegressionModel, DecisionTreeClassificationModel, BinaryLogisticRegressionModel, MultiClassLogisticRegressionModel, SVMModel, LinearRegressionModel, RidgeRegressionModel, LassoModel, NaiveBayesClassificationModel");
 			return;
 		}
 				
@@ -88,6 +89,10 @@ public class SparkPMMLExporterValidator {
 	    	 System.out.println(ModelType.DecisionTreeClassificationModel + " selected");
 	    	 evaluateClassificationTreeModelBreastCancer(createEvaluator(exportedModelsPath + "decisiontree_classification.xml"));
 	         break;
+	     case  NaiveBayesClassificationModel:
+	    	 System.out.println(ModelType.NaiveBayesClassificationModel + " selected");
+	    	 evaluateMultiClassClassificationModelIris(createEvaluator(exportedModelsPath + "naivebayes_classification.xml"));
+	         break;	    	 
 	     default:
 	    	 System.out.println("Model selected not implemented");
 	    	 return;

@@ -98,6 +98,14 @@ cd $sparkvalidatorpath
 java -jar target/spark-pmml-exporter-validator-1.1.0-SNAPSHOT-jar-with-dependencies.jar DecisionTreeRegressionModel
 ```
 
+##Naive Bayes (Classification)
+```sh
+cd src/main/resources/spark_shell_exporter/
+$sparkshellpath < naivebayes_iris.scala
+cd $sparkvalidatorpath 
+java -jar target/spark-pmml-exporter-validator-1.1.0-SNAPSHOT-jar-with-dependencies.jar NaiveBayesClassificationModel
+```
+
 [JPMML Evaluator]:https://github.com/jpmml/jpmml-evaluator
 [Apache Spark]:https://github.com/apache/spark
 [Iris]:https://github.com/selvinsource/spark-pmml-exporter-validator/blob/master/src/main/resources/datasets/iris.md
