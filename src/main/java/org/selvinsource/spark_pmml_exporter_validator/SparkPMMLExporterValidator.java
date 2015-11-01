@@ -36,7 +36,7 @@ public class SparkPMMLExporterValidator {
 		DecisionTreeRegressionModel,
 		DecisionTreeClassificationModel,
 		BinaryLogisticRegressionModel,
-		MultiClassLogisticRegressionModel,
+		MulticlassLogisticRegressionModel,
 		SVMModel,
 		LinearRegressionModel,
 		RidgeRegressionModel,
@@ -48,7 +48,7 @@ public class SparkPMMLExporterValidator {
 	{
 		
 		if(args.length != 1){
-			System.out.println("Please select a model: KMeansModel, DecisionTreeRegressionModel, DecisionTreeClassificationModel, BinaryLogisticRegressionModel, MultiClassLogisticRegressionModel, SVMModel, LinearRegressionModel, RidgeRegressionModel, LassoModel, NaiveBayesClassificationModel");
+			System.out.println("Please select a model: KMeansModel, DecisionTreeRegressionModel, DecisionTreeClassificationModel, BinaryLogisticRegressionModel, MulticlassLogisticRegressionModel, SVMModel, LinearRegressionModel, RidgeRegressionModel, LassoModel, NaiveBayesClassificationModel");
 			return;
 		}
 				
@@ -77,9 +77,9 @@ public class SparkPMMLExporterValidator {
 	    	 System.out.println(ModelType.BinaryLogisticRegressionModel + " selected");
 	    	 evaluateBinaryClassificationModelBreastCancer(createEvaluator(exportedModelsPath + "logisticregression_binary.xml"));
 	         break;
-	     case MultiClassLogisticRegressionModel:
-	    	 System.out.println(ModelType.MultiClassLogisticRegressionModel + " selected");
-	    	 evaluateMultiClassClassificationModelIris(createEvaluator(exportedModelsPath + "logisticregression_multiclass.xml"));
+	     case MulticlassLogisticRegressionModel:
+	    	 System.out.println(ModelType.MulticlassLogisticRegressionModel + " selected");
+	    	 evaluateMulticlassClassificationModelIris(createEvaluator(exportedModelsPath + "logisticregression_multiclass.xml"));
 	         break;
 	     case DecisionTreeRegressionModel:
 	    	 System.out.println(ModelType.DecisionTreeRegressionModel + " selected");
@@ -91,7 +91,7 @@ public class SparkPMMLExporterValidator {
 	         break;
 	     case  NaiveBayesClassificationModel:
 	    	 System.out.println(ModelType.NaiveBayesClassificationModel + " selected");
-	    	 evaluateMultiClassClassificationModelIris(createEvaluator(exportedModelsPath + "naivebayes_classification.xml"));
+	    	 evaluateMulticlassClassificationModelIris(createEvaluator(exportedModelsPath + "naivebayes_classification.xml"));
 	         break;	    	 
 	     default:
 	    	 System.out.println("Model selected not implemented");
@@ -123,7 +123,7 @@ public class SparkPMMLExporterValidator {
 	}
 	
 	@SuppressWarnings("rawtypes")
-	private static void evaluateMultiClassClassificationModelIris(Evaluator evaluator){
+	private static void evaluateMulticlassClassificationModelIris(Evaluator evaluator){
 		
 	    ClassificationMap map;
 		

@@ -79,7 +79,7 @@ java -jar target/spark-pmml-exporter-validator-1.1.0-SNAPSHOT-jar-with-dependenc
 cd src/main/resources/spark_shell_exporter/
 $sparkshellpath < logisticregression_iris.scala
 cd $sparkvalidatorpath 
-java -jar target/spark-pmml-exporter-validator-1.1.0-SNAPSHOT-jar-with-dependencies.jar MultiClassLogisticRegressionModel
+java -jar target/spark-pmml-exporter-validator-1.1.0-SNAPSHOT-jar-with-dependencies.jar MulticlassLogisticRegressionModel
 ```
 
 ##Decision Tree (Classification)

@@ -10,7 +10,7 @@ val parsedData = data.map { line =>
 }
 
 // Build logistic regression model
-var logistic = new LogisticRegressionWithLBFGS().setIntercept(false)
+var logistic = new LogisticRegressionWithLBFGS()
 val model = logistic.setNumClasses(3).run(parsedData)
 
 // Export logistic regression model to PMML

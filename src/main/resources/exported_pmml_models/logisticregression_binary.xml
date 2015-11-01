@@ -2,7 +2,7 @@
 <PMML xmlns="http://www.dmg.org/PMML-4_2">
     <Header description="logistic regression">
         <Application name="Apache Spark MLlib" version="1.6.0-SNAPSHOT"/>
-        <Timestamp>2015-10-04T10:17:11</Timestamp>
+        <Timestamp>2015-11-01T15:45:05</Timestamp>
     </Header>
     <DataDictionary numberOfFields="10">
         <DataField name="field_0" optype="continuous" dataType="double"/>
@@ -29,6 +29,7 @@
             <MiningField name="field_8" usageType="active"/>
             <MiningField name="target" usageType="target"/>
         </MiningSchema>
+        <RegressionTable intercept="-0.0" targetCategory="0"/>
         <RegressionTable intercept="-9.737325155536803" targetCategory="1">
             <NumericPredictor name="field_0" coefficient="0.5369544058526143"/>
             <NumericPredictor name="field_1" coefficient="0.012192046206011675"/>
@@ -40,6 +41,5 @@
             <NumericPredictor name="field_7" coefficient="0.16369961184910103"/>
             <NumericPredictor name="field_8" coefficient="0.5294786445637422"/>
         </RegressionTable>
-        <RegressionTable intercept="-0.0" targetCategory="0"/>
     </RegressionModel>
 </PMML>

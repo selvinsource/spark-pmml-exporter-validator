@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PMML xmlns="http://www.dmg.org/PMML-4_2">
+    <Header description="logistic regression">
+        <Application name="Apache Spark MLlib" version="1.6.0-SNAPSHOT"/>
+        <Timestamp>2015-11-01T16:12:05</Timestamp>
+    </Header>
+    <DataDictionary numberOfFields="5">
+        <DataField name="field_0" optype="continuous" dataType="double"/>
+        <DataField name="field_1" optype="continuous" dataType="double"/>
+        <DataField name="field_2" optype="continuous" dataType="double"/>
+        <DataField name="field_3" optype="continuous" dataType="double"/>
+        <DataField name="target" optype="categorical" dataType="string"/>
+    </DataDictionary>
+    <RegressionModel modelName="logistic regression" functionName="classification" normalizationMethod="logit">
+        <MiningSchema>
+            <MiningField name="field_0" usageType="active"/>
+            <MiningField name="field_1" usageType="active"/>
+            <MiningField name="field_2" usageType="active"/>
+            <MiningField name="field_3" usageType="active"/>
+            <MiningField name="target" usageType="target"/>
+        </MiningSchema>
+        <RegressionTable intercept="-0.0" targetCategory="0"/>
+        <RegressionTable intercept="0.0" targetCategory="1">
+            <NumericPredictor name="field_0" coefficient="10.608828104651616"/>
+            <NumericPredictor name="field_1" coefficient="-27.05914326529057"/>
+            <NumericPredictor name="field_2" coefficient="3.4786115185744926"/>
+            <NumericPredictor name="field_3" coefficient="12.351368567188572"/>
+        </RegressionTable>
+        <RegressionTable intercept="0.0" targetCategory="2">
+            <NumericPredictor name="field_0" coefficient="4.262233235457923"/>
+            <NumericPredictor name="field_1" coefficient="-33.689387086631164"/>
+            <NumericPredictor name="field_2" coefficient="11.941305004455218"/>
+            <NumericPredictor name="field_3" coefficient="22.63971301819238"/>
+        </RegressionTable>
+    </RegressionModel>
+</PMML>
