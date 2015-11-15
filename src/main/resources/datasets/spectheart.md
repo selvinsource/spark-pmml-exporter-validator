@@ -27,9 +27,6 @@ Attribute Information:
 * 22. F21: 0,1 (the partial diagnosis 21, binary)
 * 23. F22: 0,1 (the partial diagnosis 22, binary)
 
-Note:
-The class Iris Setosa, Iris Versicolour and Iris Virginica has been replaced with 0, 1 and 2 labels as required for MLlib classification algorithms
-
 ###References
 * [UCI Machine Learning Repository] University of California, School of Information and Computer Science
 

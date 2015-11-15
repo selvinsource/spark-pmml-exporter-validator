@@ -25,6 +25,7 @@ The following datasets have been used:
 * [Iris]
 * [Breast Cancer Wisconsin]
 * [Wine Quality]
+* [SPECT Heart]
 
 ##K-Means Clustering
 ```sh
@@ -118,4 +119,5 @@ java -jar target/spark-pmml-exporter-validator-1.1.0-SNAPSHOT-jar-with-dependenc
 [Iris]:https://github.com/selvinsource/spark-pmml-exporter-validator/blob/master/src/main/resources/datasets/iris.md
 [Breast Cancer Wisconsin]:https://github.com/selvinsource/spark-pmml-exporter-validator/blob/master/src/main/resources/datasets/breastcancerwisconsin.md
 [Wine Quality]:https://github.com/selvinsource/spark-pmml-exporter-validator/blob/master/src/main/resources/datasets/winequalityred.md
+[SPECT Heart]:https://github.com/selvinsource/spark-pmml-exporter-validator/blob/master/src/main/resources/datasets/spectheart.md
 
