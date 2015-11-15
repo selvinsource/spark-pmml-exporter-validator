@@ -2,7 +2,7 @@
 <PMML xmlns="http://www.dmg.org/PMML-4_2" version="4.2">
     <Header description="naive bayes">
         <Application name="Apache Spark MLlib" version="1.6.0-SNAPSHOT"/>
-        <Timestamp>2015-11-15T18:30:59</Timestamp>
+        <Timestamp>2015-11-15T20:01:27</Timestamp>
     </Header>
     <DataDictionary numberOfFields="5">
         <DataField name="field_0" optype="continuous" dataType="double"/>

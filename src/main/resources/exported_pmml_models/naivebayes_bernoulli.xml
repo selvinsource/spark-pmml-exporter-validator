@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PMML xmlns="http://www.dmg.org/PMML-4_2" version="4.2">
+    <Header description="naive bayes">
+        <Application name="Apache Spark MLlib" version="1.6.0-SNAPSHOT"/>
+        <Timestamp>2015-11-15T20:02:08</Timestamp>
+    </Header>
+    <DataDictionary numberOfFields="23">
+        <DataField name="field_0" optype="categorical" dataType="double">
+            <Value value="0.0"/>
+            <Value value="1.0"/>
+        </DataField>
+        <DataField name="field_1" optype="categorical" dataType="double">
+            <Value value="0.0"/>
+            <Value value="1.0"/>
+        </DataField>
+        <DataField name="field_2" optype="categorical" dataType="double">
+            <Value value="0.0"/>
+            <Value value="1.0"/>
+        </DataField>
+        <DataField name="field_3" optype="categorical" dataType="double">
+            <Value value="0.0"/>
+            <Value value="1.0"/>
+        </DataField>
+        <DataField name="field_4" optype="categorical" dataType="double">
+            <Value value="0.0"/>
+            <Value value="1.0"/>
+        </DataField>
+        <DataField name="field_5" optype="categorical" dataType="double">
+            <Value value="0.0"/>
+            <Value value="1.0"/>
+        </DataField>
+        <DataField name="field_6" optype="categorical" dataType="double">
+            <Value value="0.0"/>
+            <Value value="1.0"/>
+        </DataField>
+        <DataField name="field_7" optype="categorical" dataType="double">
+            <Value value="0.0"/>
+            <Value value="1.0"/>
+        </DataField>
+        <DataField name="field_8" optype="categorical" dataType="double">
+            <Value value="0.0"/>
+            <Value value="1.0"/>
+        </DataField>
+        <DataField name="field_9" optype="categorical" dataType="double">
+            <Value value="0.0"/>
+            <Value value="1.0"/>
+        </DataField>
+        <DataField name="field_10" optype="categorical" dataType="double">
+            <Value value="0.0"/>
+            <Value value="1.0"/>
+        </DataField>
+        <DataField name="field_11" optype="categorical" dataType="double">
+            <Value value="0.0"/>
+            <Value value="1.0"/>
+        </DataField>
+        <DataField name="field_12" optype="categorical" dataType="double">
+            <Value value="0.0"/>
+            <Value value="1.0"/>
+        </DataField>
+        <DataField name="field_13" optype="categorical" dataType="double">
+            <Value value="0.0"/>
+            <Value value="1.0"/>
+        </DataField>
+        <DataField name="field_14" optype="categorical" dataType="double">
+            <Value value="0.0"/>
+            <Value value="1.0"/>
+        </DataField>
+        <DataField name="field_15" optype="categorical" dataType="double">
+            <Value value="0.0"/>
+            <Value value="1.0"/>
+        </DataField>
+        <DataField name="field_16" optype="categorical" dataType="double">
+            <Value value="0.0"/>
+            <Value value="1.0"/>
+        </DataField>
+        <DataField name="field_17" optype="categorical" dataType="double">
+            <Value value="0.0"/>
+            <Value value="1.0"/>
+        </DataField>
+        <DataField name="field_18" optype="categorical" dataType="double">
+            <Value value="0.0"/>
+            <Value value="1.0"/>
+        </DataField>
+        <DataField name="field_19" optype="categorical" dataType="double">
+            <Value value="0.0"/>
+            <Value value="1.0"/>
+        </DataField>
+        <DataField name="field_20" optype="categorical" dataType="double">
+            <Value value="0.0"/>
+            <Value value="1.0"/>
+        </DataField>
+        <DataField name="field_21" optype="categorical" dataType="double">
+            <Value value="0.0"/>
+            <Value value="1.0"/>
+        </DataField>
+        <DataField name="class" optype="categorical" dataType="double">
+            <Value value="0.0"/>
+            <Value value="1.0"/>
+        </DataField>
+    </DataDictionary>
+    <NaiveBayesModel modelName="naive bayes" threshold="0.0" functionName="classification" algorithmName="bernoulli">
+        <MiningSchema>
+            <MiningField name="field_0" usageType="active"/>
+            <MiningField name="field_1" usageType="active"/>
+            <MiningField name="field_2" usageType="active"/>
+            <MiningField name="field_3" usageType="active"/>
+            <MiningField name="field_4" usageType="active"/>
+            <MiningField name="field_5" usageType="active"/>
+            <MiningField name="field_6" usageType="active"/>
+            <MiningField name="field_7" usageType="active"/>
+            <MiningField name="field_8" usageType="active"/>
+            <MiningField name="field_9" usageType="active"/>
+            <MiningField name="field_10" usageType="active"/>
+            <MiningField name="field_11" usageType="active"/>
+            <MiningField name="field_12" usageType="active"/>
+            <MiningField name="field_13" usageType="active"/>
+            <MiningField name="field_14" usageType="active"/>
+            <MiningField name="field_15" usageType="active"/>
+            <MiningField name="field_16" usageType="active"/>
+            <MiningField name="field_17" usageType="active"/>
+            <MiningField name="field_18" usageType="active"/>
+            <MiningField name="field_19" usageType="active"/>
+            <MiningField name="field_20" usageType="active"/>
+            <MiningField name="field_21" usageType="active"/>
+            <MiningField name="class" usageType="predicted"/>
+        </MiningSchema>
+        <Output>
+            <OutputField name="Predicted_class" feature="predictedValue"/>
+            <OutputField name="Probability_0.0" optype="continuous" dataType="double" feature="probability" value="0.0"/>
+            <OutputField name="Probability_1.0" optype="continuous" dataType="double" feature="probability" value="1.0"/>
+        </Output>
+        <BayesInputs>
+            <BayesInput fieldName="field_0">
+                <PairCounts value="1.0">
+                    <TargetValueCounts>
+                        <TargetValueCount value="0.0" count="0.2857142857142857"/>
+                        <TargetValueCount value="1.0" count="0.4523809523809522"/>
+                    </TargetValueCounts>
+                </PairCounts>
+                <PairCounts value="0.0">
+                    <TargetValueCounts>
+                        <TargetValueCount value="0.0" count="0.7142857142857143"/>
+                        <TargetValueCount value="1.0" count="0.5476190476190478"/>
+                    </TargetValueCounts>
+                </PairCounts>
+            </BayesInput>
+            <BayesInput fieldName="field_1">
+                <PairCounts value="1.0">
+                    <TargetValueCounts>
+                        <TargetValueCount value="0.0" count="0.0952380952380952"/>
+                        <TargetValueCount value="1.0" count="0.2619047619047619"/>
+                    </TargetValueCounts>
+                </PairCounts>
+                <PairCounts value="0.0">
+                    <TargetValueCounts>
+                        <TargetValueCount value="0.0" count="0.9047619047619048"/>
+                        <TargetValueCount value="1.0" count="0.7380952380952381"/>
+                    </TargetValueCounts>
+                </PairCounts>
+            </BayesInput>
+            <BayesInput fieldName="field_2">
+                <PairCounts value="1.0">
+                    <TargetValueCounts>
+                        <TargetValueCount value="0.0" count="0.16666666666666663"/>
+                        <TargetValueCount value="1.0" count="0.3809523809523809"/>
+                    </TargetValueCounts>
+                </PairCounts>
+                <PairCounts value="0.0">
+                    <TargetValueCounts>
+                        <TargetValueCount value="0.0" count="0.8333333333333334"/>
+                        <TargetValueCount value="1.0" count="0.6190476190476191"/>
+                    </TargetValueCounts>
+                </PairCounts>
+            </BayesInput>
+            <BayesInput fieldName="field_3">
+                <PairCounts value="1.0">
+                    <TargetValueCounts>
+                        <TargetValueCount value="0.0" count="0.119047619047619"/>
+                        <TargetValueCount value="1.0" count="0.3333333333333332"/>
+                    </TargetValueCounts>
+                </PairCounts>
+                <PairCounts value="0.0">
+                    <TargetValueCounts>
+                        <TargetValueCount value="0.0" count="0.880952380952381"/>
+                        <TargetValueCount value="1.0" count="0.6666666666666667"/>
+                    </TargetValueCounts>
+                </PairCounts>
+            </BayesInput>
+            <BayesInput fieldName="field_4">
+                <PairCounts value="1.0">
+                    <TargetValueCounts>
+                        <TargetValueCount value="0.0" count="0.2619047619047619"/>
+                        <TargetValueCount value="1.0" count="0.3571428571428571"/>
+                    </TargetValueCounts>
+                </PairCounts>
+                <PairCounts value="0.0">
+                    <TargetValueCounts>
+                        <TargetValueCount value="0.0" count="0.7380952380952381"/>
+                        <TargetValueCount value="1.0" count="0.6428571428571429"/>
+                    </TargetValueCounts>
+                </PairCounts>
+            </BayesInput>
+            <BayesInput fieldName="field_5">
+                <PairCounts value="1.0">
+                    <TargetValueCounts>
+                        <TargetValueCount value="0.0" count="0.0952380952380952"/>
+                        <TargetValueCount value="1.0" count="0.1904761904761904"/>
+                    </TargetValueCounts>
+                </PairCounts>
+                <PairCounts value="0.0">
+                    <TargetValueCounts>
+                        <TargetValueCount value="0.0" count="0.9047619047619048"/>
+                        <TargetValueCount value="1.0" count="0.8095238095238095"/>
+                    </TargetValueCounts>
+                </PairCounts>
+            </BayesInput>
+            <BayesInput fieldName="field_6">
+                <PairCounts value="1.0">
+                    <TargetValueCounts>
+                        <TargetValueCount value="0.0" count="0.14285714285714285"/>
+                        <TargetValueCount value="1.0" count="0.40476190476190477"/>
+                    </TargetValueCounts>
+                </PairCounts>
+                <PairCounts value="0.0">
+                    <TargetValueCounts>
+                        <TargetValueCount value="0.0" count="0.8571428571428572"/>
+                        <TargetValueCount value="1.0" count="0.5952380952380952"/>
+                    </TargetValueCounts>
+                </PairCounts>
+            </BayesInput>
+            <BayesInput fieldName="field_7">
+                <PairCounts value="1.0">
+                    <TargetValueCounts>
+                        <TargetValueCount value="0.0" count="0.119047619047619"/>
+                        <TargetValueCount value="1.0" count="0.4523809523809522"/>
+                    </TargetValueCounts>
+                </PairCounts>
+                <PairCounts value="0.0">
+                    <TargetValueCounts>
+                        <TargetValueCount value="0.0" count="0.880952380952381"/>
+                        <TargetValueCount value="1.0" count="0.5476190476190478"/>
+                    </TargetValueCounts>
+                </PairCounts>
+            </BayesInput>
+            <BayesInput fieldName="field_8">
+                <PairCounts value="1.0">
+                    <TargetValueCounts>
+                        <TargetValueCount value="0.0" count="0.119047619047619"/>
+                        <TargetValueCount value="1.0" count="0.2857142857142857"/>
+                    </TargetValueCounts>
+                </PairCounts>
+                <PairCounts value="0.0">
+                    <TargetValueCounts>
+                        <TargetValueCount value="0.0" count="0.880952380952381"/>
+                        <TargetValueCount value="1.0" count="0.7142857142857143"/>
+                    </TargetValueCounts>
+                </PairCounts>
+            </BayesInput>
+            <BayesInput fieldName="field_9">
+                <PairCounts value="1.0">
+                    <TargetValueCounts>
+                        <TargetValueCount value="0.0" count="0.2142857142857143"/>
+                        <TargetValueCount value="1.0" count="0.3809523809523809"/>
+                    </TargetValueCounts>
+                </PairCounts>
+                <PairCounts value="0.0">
+                    <TargetValueCounts>
+                        <TargetValueCount value="0.0" count="0.7857142857142857"/>
+                        <TargetValueCount value="1.0" count="0.6190476190476191"/>
+                    </TargetValueCounts>
+                </PairCounts>
+            </BayesInput>
+            <BayesInput fieldName="field_10">
+                <PairCounts value="1.0">
+                    <TargetValueCounts>
+                        <TargetValueCount value="0.0" count="0.0952380952380952"/>
+                        <TargetValueCount value="1.0" count="0.3333333333333332"/>
+                    </TargetValueCounts>
+                </PairCounts>
+                <PairCounts value="0.0">
+                    <TargetValueCounts>
+                        <TargetValueCount value="0.0" count="0.9047619047619048"/>
+                        <TargetValueCount value="1.0" count="0.6666666666666667"/>
+                    </TargetValueCounts>
+                </PairCounts>
+            </BayesInput>
+            <BayesInput fieldName="field_11">
+                <PairCounts value="1.0">
+                    <TargetValueCounts>
+                        <TargetValueCount value="0.0" count="0.14285714285714285"/>
+                        <TargetValueCount value="1.0" count="0.3809523809523809"/>
+                    </TargetValueCounts>
+                </PairCounts>
+                <PairCounts value="0.0">
+                    <TargetValueCounts>
+                        <TargetValueCount value="0.0" count="0.8571428571428572"/>
+                        <TargetValueCount value="1.0" count="0.6190476190476191"/>
+                    </TargetValueCounts>
+                </PairCounts>
+            </BayesInput>
+            <BayesInput fieldName="field_12">
+                <PairCounts value="1.0">
+                    <TargetValueCounts>
+                        <TargetValueCount value="0.0" count="0.14285714285714285"/>
+                        <TargetValueCount value="1.0" count="0.5714285714285714"/>
+                    </TargetValueCounts>
+                </PairCounts>
+                <PairCounts value="0.0">
+                    <TargetValueCounts>
+                        <TargetValueCount value="0.0" count="0.8571428571428572"/>
+                        <TargetValueCount value="1.0" count="0.4285714285714286"/>
+                    </TargetValueCounts>
+                </PairCounts>
+            </BayesInput>
+            <BayesInput fieldName="field_13">
+                <PairCounts value="1.0">
+                    <TargetValueCounts>
+                        <TargetValueCount value="0.0" count="0.119047619047619"/>
+                        <TargetValueCount value="1.0" count="0.3095238095238095"/>
+                    </TargetValueCounts>
+                </PairCounts>
+                <PairCounts value="0.0">
+                    <TargetValueCounts>
+                        <TargetValueCount value="0.0" count="0.880952380952381"/>
+                        <TargetValueCount value="1.0" count="0.6904761904761905"/>
+                    </TargetValueCounts>
+                </PairCounts>
+            </BayesInput>
+            <BayesInput fieldName="field_14">
+                <PairCounts value="1.0">
+                    <TargetValueCounts>
+                        <TargetValueCount value="0.0" count="0.047619047619047616"/>
+                        <TargetValueCount value="1.0" count="0.14285714285714285"/>
+                    </TargetValueCounts>
+                </PairCounts>
+                <PairCounts value="0.0">
+                    <TargetValueCounts>
+                        <TargetValueCount value="0.0" count="0.9523809523809523"/>
+                        <TargetValueCount value="1.0" count="0.8571428571428572"/>
+                    </TargetValueCounts>
+                </PairCounts>
+            </BayesInput>
+            <BayesInput fieldName="field_15">
+                <PairCounts value="1.0">
+                    <TargetValueCounts>
+                        <TargetValueCount value="0.0" count="0.047619047619047616"/>
+                        <TargetValueCount value="1.0" count="0.3333333333333332"/>
+                    </TargetValueCounts>
+                </PairCounts>
+                <PairCounts value="0.0">
+                    <TargetValueCounts>
+                        <TargetValueCount value="0.0" count="0.9523809523809523"/>
+                        <TargetValueCount value="1.0" count="0.6666666666666667"/>
+                    </TargetValueCounts>
+                </PairCounts>
+            </BayesInput>
+            <BayesInput fieldName="field_16">
+                <PairCounts value="1.0">
+                    <TargetValueCounts>
+                        <TargetValueCount value="0.0" count="0.023809523809523808"/>
+                        <TargetValueCount value="1.0" count="0.2142857142857143"/>
+                    </TargetValueCounts>
+                </PairCounts>
+                <PairCounts value="0.0">
+                    <TargetValueCounts>
+                        <TargetValueCount value="0.0" count="0.9761904761904762"/>
+                        <TargetValueCount value="1.0" count="0.7857142857142857"/>
+                    </TargetValueCounts>
+                </PairCounts>
+            </BayesInput>
+            <BayesInput fieldName="field_17">
+                <PairCounts value="1.0">
+                    <TargetValueCounts>
+                        <TargetValueCount value="0.0" count="0.023809523809523808"/>
+                        <TargetValueCount value="1.0" count="0.16666666666666663"/>
+                    </TargetValueCounts>
+                </PairCounts>
+                <PairCounts value="0.0">
+                    <TargetValueCounts>
+                        <TargetValueCount value="0.0" count="0.9761904761904762"/>
+                        <TargetValueCount value="1.0" count="0.8333333333333334"/>
+                    </TargetValueCounts>
+                </PairCounts>
+            </BayesInput>
+            <BayesInput fieldName="field_18">
+                <PairCounts value="1.0">
+                    <TargetValueCounts>
+                        <TargetValueCount value="0.0" count="0.14285714285714285"/>
+                        <TargetValueCount value="1.0" count="0.2619047619047619"/>
+                    </TargetValueCounts>
+                </PairCounts>
+                <PairCounts value="0.0">
+                    <TargetValueCounts>
+                        <TargetValueCount value="0.0" count="0.8571428571428572"/>
+                        <TargetValueCount value="1.0" count="0.7380952380952381"/>
+                    </TargetValueCounts>
+                </PairCounts>
+            </BayesInput>
+            <BayesInput fieldName="field_19">
+                <PairCounts value="1.0">
+                    <TargetValueCounts>
+                        <TargetValueCount value="0.0" count="0.14285714285714285"/>
+                        <TargetValueCount value="1.0" count="0.3333333333333332"/>
+                    </TargetValueCounts>
+                </PairCounts>
+                <PairCounts value="0.0">
+                    <TargetValueCounts>
+                        <TargetValueCount value="0.0" count="0.8571428571428572"/>
+                        <TargetValueCount value="1.0" count="0.6666666666666667"/>
+                    </TargetValueCounts>
+                </PairCounts>
+            </BayesInput>
+            <BayesInput fieldName="field_20">
+                <PairCounts value="1.0">
+                    <TargetValueCounts>
+                        <TargetValueCount value="0.0" count="0.119047619047619"/>
+                        <TargetValueCount value="1.0" count="0.3809523809523809"/>
+                    </TargetValueCounts>
+                </PairCounts>
+                <PairCounts value="0.0">
+                    <TargetValueCounts>
+                        <TargetValueCount value="0.0" count="0.880952380952381"/>
+                        <TargetValueCount value="1.0" count="0.6190476190476191"/>
+                    </TargetValueCounts>
+                </PairCounts>
+            </BayesInput>
+            <BayesInput fieldName="field_21">
+                <PairCounts value="1.0">
+                    <TargetValueCounts>
+                        <TargetValueCount value="0.0" count="0.1904761904761904"/>
+                        <TargetValueCount value="1.0" count="0.47619047619047605"/>
+                    </TargetValueCounts>
+                </PairCounts>
+                <PairCounts value="0.0">
+                    <TargetValueCounts>
+                        <TargetValueCount value="0.0" count="0.8095238095238095"/>
+                        <TargetValueCount value="1.0" count="0.523809523809524"/>
+                    </TargetValueCounts>
+                </PairCounts>
+            </BayesInput>
+        </BayesInputs>
+        <BayesOutput fieldName="class">
+            <TargetValueCounts>
+                <TargetValueCount value="0.0" count="0.49999999999999994"/>
+                <TargetValueCount value="1.0" count="0.49999999999999994"/>
+            </TargetValueCounts>
+        </BayesOutput>
+    </NaiveBayesModel>
+</PMML>

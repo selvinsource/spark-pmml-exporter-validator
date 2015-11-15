@@ -98,12 +98,19 @@ cd $sparkvalidatorpath
 java -jar target/spark-pmml-exporter-validator-1.1.0-SNAPSHOT-jar-with-dependencies.jar DecisionTreeRegressionModel
 ```
 
-##Naive Bayes (Classification)
+##Naive Bayes (Multinomial Classification)
 ```sh
 cd src/main/resources/spark_shell_exporter/
 $sparkshellpath < naivebayes_iris.scala
 cd $sparkvalidatorpath 
-java -jar target/spark-pmml-exporter-validator-1.1.0-SNAPSHOT-jar-with-dependencies.jar NaiveBayesClassificationModel
+java -jar target/spark-pmml-exporter-validator-1.1.0-SNAPSHOT-jar-with-dependencies.jar MultinomialNaiveBayesClassificationModel
+```
+##Naive Bayes (Bernoulli Classification)
+```sh
+cd src/main/resources/spark_shell_exporter/
+$sparkshellpath < naivebayes_spectheart.scala
+cd $sparkvalidatorpath 
+java -jar target/spark-pmml-exporter-validator-1.1.0-SNAPSHOT-jar-with-dependencies.jar BernoulliNaiveBayesClassificationModel
 ```
 
 [JPMML Evaluator]:https://github.com/jpmml/jpmml-evaluator

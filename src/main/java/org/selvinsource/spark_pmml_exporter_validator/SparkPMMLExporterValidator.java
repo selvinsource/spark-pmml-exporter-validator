@@ -41,7 +41,8 @@ public class SparkPMMLExporterValidator {
 		LinearRegressionModel,
 		RidgeRegressionModel,
 		LassoModel,
-		NaiveBayesClassificationModel;
+		MultinomialNaiveBayesClassificationModel,
+		BernoulliNaiveBayesClassificationModel;
     }
 	
 	public static void main( String[] args ) throws JAXBException, DatatypeConfigurationException, SAXException, IOException
@@ -89,10 +90,14 @@ public class SparkPMMLExporterValidator {
 	    	 System.out.println(ModelType.DecisionTreeClassificationModel + " selected");
 	    	 evaluateClassificationTreeModelBreastCancer(createEvaluator(exportedModelsPath + "decisiontree_classification.xml"));
 	         break;
-	     case  NaiveBayesClassificationModel:
-	    	 System.out.println(ModelType.NaiveBayesClassificationModel + " selected");
-	    	 evaluateMulticlassClassificationModelIris(createEvaluator(exportedModelsPath + "naivebayes_classification.xml"));
-	         break;	    	 
+	     case MultinomialNaiveBayesClassificationModel:
+	    	 System.out.println(ModelType.MultinomialNaiveBayesClassificationModel + " selected");
+	    	 evaluateMulticlassClassificationModelIris(createEvaluator(exportedModelsPath + "naivebayes_multinomial.xml"));
+	         break;
+	     case BernoulliNaiveBayesClassificationModel:
+	    	 System.out.println(ModelType.BernoulliNaiveBayesClassificationModel + " selected");
+	    	 evaluateClassificationModelSPECTHeart(createEvaluator(exportedModelsPath + "naivebayes_bernoulli.xml"));
+	         break;	
 	     default:
 	    	 System.out.println("Model selected not implemented");
 	    	 return;
@@ -133,6 +138,18 @@ public class SparkPMMLExporterValidator {
 		System.out.println("Class value for new Double[]{6.2,2.9,4.3,1.3}: " + map.getResult());
 		map = SparkPMMLExporterValidator.<ClassificationMap>evaluate(new Double[]{5.9,3.0,5.1,1.8}, evaluator);
 		System.out.println("Class value for new Double[]{5.9,3.0,5.1,1.8}: " + map.getResult());
+		
+	}
+	
+	@SuppressWarnings("rawtypes")
+	private static void evaluateClassificationModelSPECTHeart(Evaluator evaluator){
+		
+	    ClassificationMap map;
+		
+		map = SparkPMMLExporterValidator.<ClassificationMap>evaluate(new Double[]{0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, evaluator);
+		System.out.println("Class value for new Double[]{0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}: " + map.getResult());
+		map = SparkPMMLExporterValidator.<ClassificationMap>evaluate(new Double[]{1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}, evaluator);
+		System.out.println("Class value for new Double[]{1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0}: " + map.getResult());
 		
 	}
 	

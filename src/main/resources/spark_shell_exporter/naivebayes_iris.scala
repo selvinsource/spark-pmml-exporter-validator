@@ -13,7 +13,7 @@ val parsedData = data.map { line =>
 val model = NaiveBayes.train(parsedData, lambda = 1.0, modelType = "multinomial")
 
 // Export naive bayes model to PMML
-model.toPMML("../exported_pmml_models/naivebayes_classification.xml")
+model.toPMML("../exported_pmml_models/naivebayes_multinomial.xml")
 
 // Test model on training data
 // First from iris.csv associated to Iris-setosa (0)
