@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<PMML xmlns="http://www.dmg.org/PMML-4_2">
+<PMML xmlns="http://www.dmg.org/PMML-4_2" version="4.2">
     <Header description="naive bayes">
         <Application name="Apache Spark MLlib" version="1.6.0-SNAPSHOT"/>
-        <Timestamp>2015-10-29T21:48:30</Timestamp>
+        <Timestamp>2015-11-15T18:30:59</Timestamp>
     </Header>
     <DataDictionary numberOfFields="5">
         <DataField name="field_0" optype="continuous" dataType="double"/>
         <DataField name="field_1" optype="continuous" dataType="double"/>
         <DataField name="field_2" optype="continuous" dataType="double"/>
         <DataField name="field_3" optype="continuous" dataType="double"/>
-        <DataField name="target" optype="categorical" dataType="double">
-            <Value value="0"/>
-            <Value value="1"/>
-            <Value value="2"/>
+        <DataField name="class" optype="categorical" dataType="double">
+            <Value value="0.0"/>
+            <Value value="1.0"/>
+            <Value value="2.0"/>
         </DataField>
     </DataDictionary>
     <NaiveBayesModel modelName="naive bayes" threshold="0.0" functionName="classification" algorithmName="multinomial">
@@ -21,51 +21,73 @@
             <MiningField name="field_1" usageType="active"/>
             <MiningField name="field_2" usageType="active"/>
             <MiningField name="field_3" usageType="active"/>
-            <MiningField name="target" usageType="target"/>
+            <MiningField name="class" usageType="predicted"/>
         </MiningSchema>
+        <Output>
+            <OutputField name="Predicted_class" feature="predictedValue"/>
+            <OutputField name="Probability_0.0" optype="continuous" dataType="double" feature="probability" value="0.0"/>
+            <OutputField name="Probability_1.0" optype="continuous" dataType="double" feature="probability" value="1.0"/>
+            <OutputField name="Probability_2.0" optype="continuous" dataType="double" feature="probability" value="2.0"/>
+        </Output>
         <BayesInputs>
             <BayesInput fieldName="field_0">
-                <PairCounts>
-                    <TargetValueCounts>
-                        <TargetValueCount value="target_0" count="-0.7089390602578369"/>
-                        <TargetValueCount value="target_1" count="-0.8808827544295097"/>
-                        <TargetValueCount value="target_2" count="-0.957790462780908"/>
-                    </TargetValueCounts>
-                </PairCounts>
+                <TargetValueStats>
+                    <TargetValueStat value="0.0">
+                        <GaussianDistribution mean="0.49216607912260085" variance="1.0"/>
+                    </TargetValueStat>
+                    <TargetValueStat value="1.0">
+                        <GaussianDistribution mean="0.4144169217923741" variance="1.0"/>
+                    </TargetValueStat>
+                    <TargetValueStat value="2.0">
+                        <GaussianDistribution mean="0.3837398373983739" variance="1.0"/>
+                    </TargetValueStat>
+                </TargetValueStats>
             </BayesInput>
             <BayesInput fieldName="field_1">
-                <PairCounts>
-                    <TargetValueCounts>
-                        <TargetValueCount value="target_0" count="-1.088673592418579"/>
-                        <TargetValueCount value="target_1" count="-1.6392402734179985"/>
-                        <TargetValueCount value="target_2" count="-1.7494612130021476"/>
-                    </TargetValueCounts>
-                </PairCounts>
+                <TargetValueStats>
+                    <TargetValueStat value="0.0">
+                        <GaussianDistribution mean="0.3366627497062282" variance="1.0"/>
+                    </TargetValueStat>
+                    <TargetValueStat value="1.0">
+                        <GaussianDistribution mean="0.1941274700807124" variance="1.0"/>
+                    </TargetValueStat>
+                    <TargetValueStat value="2.0">
+                        <GaussianDistribution mean="0.17386759581881542" variance="1.0"/>
+                    </TargetValueStat>
+                </TargetValueStats>
             </BayesInput>
             <BayesInput fieldName="field_2">
-                <PairCounts>
-                    <TargetValueCounts>
-                        <TargetValueCount value="target_0" count="-1.9288223546340486"/>
-                        <TargetValueCount value="target_1" count="-1.2113288596575673"/>
-                        <TargetValueCount value="target_2" count="-1.1283174430820253"/>
-                    </TargetValueCounts>
-                </PairCounts>
+                <TargetValueStats>
+                    <TargetValueStat value="0.0">
+                        <GaussianDistribution mean="0.14531923227575402" variance="1.0"/>
+                    </TargetValueStat>
+                    <TargetValueStat value="1.0">
+                        <GaussianDistribution mean="0.29780128026718605" variance="1.0"/>
+                    </TargetValueStat>
+                    <TargetValueStat value="2.0">
+                        <GaussianDistribution mean="0.32357723577235775" variance="1.0"/>
+                    </TargetValueStat>
+                </TargetValueStats>
             </BayesInput>
             <BayesInput fieldName="field_3">
-                <PairCounts>
-                    <TargetValueCounts>
-                        <TargetValueCount value="target_0" count="-3.6553696752150584"/>
-                        <TargetValueCount value="target_1" count="-2.3681446380287365"/>
-                        <TargetValueCount value="target_2" count="-2.1301848314701495"/>
-                    </TargetValueCounts>
-                </PairCounts>
+                <TargetValueStats>
+                    <TargetValueStat value="0.0">
+                        <GaussianDistribution mean="0.02585193889541715" variance="1.0"/>
+                    </TargetValueStat>
+                    <TargetValueStat value="1.0">
+                        <GaussianDistribution mean="0.09365432785972722" variance="1.0"/>
+                    </TargetValueStat>
+                    <TargetValueStat value="2.0">
+                        <GaussianDistribution mean="0.11881533101045302" variance="1.0"/>
+                    </TargetValueStat>
+                </TargetValueStats>
             </BayesInput>
         </BayesInputs>
-        <BayesOutput>
+        <BayesOutput fieldName="class">
             <TargetValueCounts>
-                <TargetValueCount value="target_0" count="-1.0986122886681096"/>
-                <TargetValueCount value="target_1" count="-1.0986122886681096"/>
-                <TargetValueCount value="target_2" count="-1.0986122886681096"/>
+                <TargetValueCount value="0.0" count="0.33333333333333337"/>
+                <TargetValueCount value="1.0" count="0.33333333333333337"/>
+                <TargetValueCount value="2.0" count="0.33333333333333337"/>
             </TargetValueCounts>
         </BayesOutput>
     </NaiveBayesModel>
